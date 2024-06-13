@@ -1,0 +1,29 @@
+.post_card{
+    height: 20vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: white;
+    border-radius: 8px;
+    padding: 10px;
+
+
+   .upper_div{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+
+
+      img{
+        height: 10vh;
+        border-radius: 50%;
+      }
+   }
+}

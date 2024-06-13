@@ -1,0 +1,104 @@
+#body {
+    scroll-behavior: smooth;
+}
+
+::selection {
+    background-color: #ebdad0;
+    color: white;
+
+}
+
+#FAQ {
+    width: 100%;
+    height: 70vh;
+    background-image: url("assets/images/6.jpg");
+    background-size: cover;
+    background-position: top;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+        font-size: 67px;
+        color: white;
+    }
+
+    .HomeAbout {
+        color: white;
+        display: flex;
+
+        .link {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+        }
+
+       
+
+        .About p {
+            padding: 0 8px 0 0;
+        }
+    }
+}
+#Contact{
+    width: 100%;
+        height: 70vh;
+        background-image: url("assets/images/21.jpg");
+        background-size: cover;
+        background-position: top;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+    
+        h1 {
+            font-size: 67px;
+            color: white;
+        }
+    
+        .HomeAbout {
+            color: white;
+            display: flex;
+    
+            .link {
+                text-decoration: none;
+                color: white;
+                font-size: 18px;
+            }
+    
+    
+    
+            .About p {
+                padding: 0 8px 0 0;
+            }
+        }
+}
+#gpBanner {
+    background-image: url('assets/images/Home-banner.jpg');
+    width: 100%;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+
+}
+
+#gpBanner ::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #180e0e;
+    height: 100vh;
+    width: 100%;
+    opacity: 0.6;
+}
+
+@media (min-width: 640px) {}
+
+@media (min-width: 768px) {}
+
+@media (min-width: 990px) {}

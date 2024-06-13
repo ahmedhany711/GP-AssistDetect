@@ -1,0 +1,58 @@
+#team {
+  height: 70vh;
+  background-image: url(../../../assets/images/6.jpg);
+  background-size: cover;
+  background-position: top;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.main_section {
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 96px 32px 0;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: center;
+    gap: 20px;
+
+    span {
+      font-size: 16px;
+    }
+
+    h1 {
+      font-size: 48px;
+      margin: 0 0 8px;
+    }
+  }
+
+  #doctors_card {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding-top: 60px;
+
+  }
+
+
+
+}

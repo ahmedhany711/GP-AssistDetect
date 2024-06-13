@@ -1,0 +1,54 @@
+.review_card {
+  height: 50vh;
+  background-color: lightgray;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  padding: 32px;
+  border-radius: 7px;
+  border: 2px solid lightgray;
+
+  .stars {
+    display: flex;
+  }
+
+  p {
+  }
+
+  .reviewerDetails {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+
+    .reiewerImg {
+      padding: 10px;
+      img {
+        height: 6vh;
+        border-radius: 50%;
+      }
+    }
+
+    .reviewInf {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-content: flex-start;
+      justify-content: flex-start;
+      align-items: flex-start;
+
+      span {
+      }
+      p {
+      }
+    }
+
+    .faQuote {
+    }
+  }
+}

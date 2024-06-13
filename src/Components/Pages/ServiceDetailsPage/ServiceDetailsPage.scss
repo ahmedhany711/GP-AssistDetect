@@ -1,0 +1,49 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#sec1 {
+    height: 70vh;
+    background-image: url(../../assets/images/16.jpg);
+    background-size: cover;
+    background-position: top;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+      font-size: 67px;
+      color: white;
+    }
+
+    .HomeAbout {
+      color: white;
+      display: flex;
+
+      .link {
+        text-decoration: none;
+        color: white;
+        font-size: 18px;
+      }
+
+      .About {
+        display: flex;
+        padding: 0 0 0 8px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: flex-start;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 0 0 0 8px;
+      }
+
+      .About p {
+        padding: 0 8px 0 0;
+      }
+    }
+  }
