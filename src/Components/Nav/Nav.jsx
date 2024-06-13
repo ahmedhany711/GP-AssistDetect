@@ -107,10 +107,7 @@ const Nav = ({}) => {
                 </Link>
               </div>
               {/* Links */}
-              <div
-                className="flex   py-4 -ml-20"
-                data-aos="zoom-in"
-              >
+              <div className="flex   py-4 -ml-20" data-aos="zoom-in">
                 <ul className=" list-none flex  md:flex gap-[5px] md:gap-[1px]  items-end  mx-auto mb-0">
                   {filteredMenu.map((data) => {
                     return (
@@ -138,7 +135,7 @@ const Nav = ({}) => {
               </div>
               {/* Login Button */}
 
-              <div className="absolute top-1/4 right-5 -translate-y-1/4">{handleButtons()}</div>
+              {handleButtons()}
             </Container>
           </div>
         </div>
