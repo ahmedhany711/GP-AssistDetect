@@ -91,7 +91,7 @@ const Nav = ({}) => {
       <div className="  bg-nav  backdrop-blur-[1px]  fixed top-0 left-0 right-0 z-[9999]  shadow-sm font-headingFont">
         <div className="flex flex-col  top-0 left-0 right-0 z-50 w-full ">
           {/*  Nav */}
-          <div className=" w-full items-center  w-[80%]  text-2xl">
+          <div className="  items-center  w-[80%]  text-2xl">
             <Container className="flex flex-col  md:flex-row justify-start lg:justify-around items-center  lg:py-1 gap-1 md:gap-5  ">
               {/* Logo  */}
               <div
