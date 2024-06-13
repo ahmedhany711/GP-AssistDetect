@@ -1,10 +1,6 @@
 import React, { useState } from "react";
 import "./FormPage.scss";
 import Swal from "sweetalert2";
-<<<<<<< HEAD
-=======
-import PatientNav from "../../Nav/Patient/PatientNav";
->>>>>>> 8e28f0b407a25b7122303b83c3a5f28aa3de6d59
 import Footer from "../../Footer/Footer";
 
 export default function FormPage() {
@@ -52,7 +48,7 @@ export default function FormPage() {
             "interest-q8": selectedOptions[7],
             "interest-q9": selectedOptions[8],
             text_input: TextAreaContent,
-            // text_input: "i want to kill my self",
+          
           }),
         }
       );

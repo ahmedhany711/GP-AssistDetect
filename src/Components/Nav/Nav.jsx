@@ -4,11 +4,7 @@ import { Link } from "react-router-dom";
 
 import logo from "../../photos/ui ux home/FinalLog-removebg-preview.png";
 
-
-
-
 const Nav = ({}) => {
-
   const menu = [
     { id: 1, name: "Home", link: "/" },
     { id: 2, name: "About Us", link: "/about" },
@@ -26,19 +22,13 @@ const Nav = ({}) => {
     setActiveLink(id);
   };
 
-  const [activeLink, setActiveLink] = useState(menu[0].id); 
-  
-const handleLinkClick = (id) => {
-  setActiveLink(id);
-};
-
   const [isLoggedIn, setIsLoggedIn] = useState(() => {
-    const isLogin = JSON.parse(localStorage.getItem("isLogin"));
+    const isLogin = JSON.parse(localStorage.getItem("isLogin?")) || false;
     return isLogin;
   });
 
   useEffect(() => {
-    localStorage.setItem("isLogin", JSON.stringify(isLoggedIn));
+    localStorage.setItem("isLogin?", JSON.stringify(isLoggedIn));
   }, [isLoggedIn]);
 
   // Filter menu items based on authentication and user role
@@ -100,11 +90,14 @@ const handleLinkClick = (id) => {
     <>
       <div className="  bg-nav  backdrop-blur-[1px]  fixed top-0 left-0 right-0 z-[9999]  shadow-sm font-headingFont">
         <div className="flex flex-col  top-0 left-0 right-0 z-50 w-full ">
-          {/* First Nav */}
-          <div className="  items-center  w-full  text-2xl">
-            <Container className="flex justify-between items-center    py-1 gap-5  ">
+          {/*  Nav */}
+          <div className="  items-center  w-[80%]  text-2xl">
+            <Container className="flex flex-col  md:flex-row justify-start lg:justify-around items-center  lg:py-1 gap-1 md:gap-5  ">
               {/* Logo  */}
-              <div className="  w-[600px] text-white z-[1]" data-aos="zoom-in">
+              <div
+                className="  w-[200px]  lg:w-[300px] text-white z-[1]"
+                data-aos="zoom-in"
+              >
                 <Link to="/" className="flex items-center ">
                   <img
                     src={logo}
@@ -114,8 +107,11 @@ const handleLinkClick = (id) => {
                 </Link>
               </div>
               {/* Links */}
-              <div className="flex w-full h-full  py-4  " data-aos="zoom-in">
-                <ul className=" list-none flex  sm:flex gap-[5px] md:gap-[1px] items-end   ml-auto mr-10 mb-0">
+              <div
+                className="flex   py-4 -ml-20"
+                data-aos="zoom-in"
+              >
+                <ul className=" list-none flex  md:flex gap-[5px] md:gap-[1px]  items-end  mx-auto mb-0">
                   {filteredMenu.map((data) => {
                     return (
                       <li key={data.id}>
@@ -123,20 +119,13 @@ const handleLinkClick = (id) => {
                           to={data.link}
                           onClick={() => handleLinkClick(data.id)}
                           className={`
-<<<<<<< HEAD
-                                                    ${data.id === activeLink
-                              ? "text-active  "
-                              : "text-white hover:text-active"
-                            }
-=======
                                                     ${
                                                       data.id === activeLink
                                                         ? "text-active  "
                                                         : "text-white hover:text-active"
                                                     }
->>>>>>> 8e28f0b407a25b7122303b83c3a5f28aa3de6d59
-                                                
-                                                    no-underline   px-3   text-2xl
+                                                                                        
+                                                    no-underline   px-3  text-lg  lg:text-2xl
                                                     duration-300 hover:text-active
                                                     inline-block `}
                         >
@@ -148,7 +137,8 @@ const handleLinkClick = (id) => {
                 </ul>
               </div>
               {/* Login Button */}
-              {handleButtons()}
+
+              <div className="absolute top-1/4 right-5 -translate-y-1/4">{handleButtons()}</div>
             </Container>
           </div>
         </div>

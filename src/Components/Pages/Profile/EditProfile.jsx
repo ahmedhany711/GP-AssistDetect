@@ -8,11 +8,11 @@ const EditProfilePage = ({ onLogin }) => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [fullName, setFullName] = useState("");
   const [birth, setBirth] = useState("");
-<<<<<<< HEAD
+
   const [bio] = useState("");
-=======
-  const [bio, setBio] = useState("");
->>>>>>> 8e28f0b407a25b7122303b83c3a5f28aa3de6d59
+
+  // const [bio, setBio] = useState("");
+
   const [error, setError] = useState("");
 
   const handleSubmit = (e) => {
@@ -43,7 +43,7 @@ const EditProfilePage = ({ onLogin }) => {
     }
 
     // Update user profile with the provided information
-<<<<<<< HEAD
+
     // const userProfile = {
     //   email,
     //   password,
@@ -52,19 +52,7 @@ const EditProfilePage = ({ onLogin }) => {
     //   bio,
     // };
 
-=======
-    const userProfile = {
-      email,
-      password,
-      fullName,
-      birth,
-      bio,
-    };
 
-    // Here you would send the userProfile object to your server to update the profile
-
-    // Redirect or perform any necessary actions after successful profile update
->>>>>>> 8e28f0b407a25b7122303b83c3a5f28aa3de6d59
   };
 
   return (

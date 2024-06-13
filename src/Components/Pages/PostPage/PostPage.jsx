@@ -2,13 +2,6 @@ import React from "react";
 import PostCard from "../../PostCard/PostCard";
 import image10 from "../../../assets/images/10.jpg";
 import image11 from "../../../assets/images/11.jpg";
-<<<<<<< HEAD
-import "./PostPage.scss";
-=======
-
-import "./PostPage.scss";
-import Nav from "../../Nav/Nav";
->>>>>>> 8e28f0b407a25b7122303b83c3a5f28aa3de6d59
 import PatientNav from "../../Nav/Patient/PatientNav";
 import Footer from "../../Footer/Footer";
 

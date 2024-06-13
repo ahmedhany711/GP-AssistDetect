@@ -2,18 +2,7 @@ import React from "react";
 import { MdOutlineMail } from "react-icons/md";
 import { FaPhone } from "react-icons/fa";
 import "../../../";
-import {
-<<<<<<< HEAD
-  FaLocationArrow,
-=======
-  FaFacebook,
-  FaInstagram,
-  FaLinkedin,
-  FaLinkedinIn,
-  FaLocationArrow,
-  FaMobileAlt,
->>>>>>> 8e28f0b407a25b7122303b83c3a5f28aa3de6d59
-} from "react-icons/fa";
+import { FaLocationArrow } from "react-icons/fa";
 import Footer from "../../Footer/Footer";
 import img from "../../../assets/images/16.jpg";
 import { Link } from "react-router-dom";
@@ -21,13 +10,14 @@ const ContactUs = () => {
   return (
     <>
       <section
+        data-aos="fade-up"
         className="sec1 h-[70vh] bg-cover bg-top flex flex-col lg:flex-row lg:items-center lg:justify-center text-white relative "
         id="Contact"
       >
         {/* OverLay */}
         <div
           id="overlay"
-          className="absolute top-0 left-0 w-full h-full bg-homeOverly/30 opacity-65 px-8 py-16"
+          className="absolute top-0 left-0 w-full h-full bg-homeOverly/50 opacity-65 px-8 py-16"
         ></div>
         {/* Text Details  */}
         <div className="z-[10]">

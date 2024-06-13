@@ -1,11 +1,5 @@
 import React from "react";
 import image1 from "../../../../assets/images/16.jpg";
-<<<<<<< HEAD
-=======
-import Services from "../../../Services/Services";
-import { FaAward } from "react-icons/fa";
-import { FaUserGroup } from "react-icons/fa6";
->>>>>>> 8e28f0b407a25b7122303b83c3a5f28aa3de6d59
 import Box from "../../../Box/Box";
 export default function PatientLanding() {
   return (

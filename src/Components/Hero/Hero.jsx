@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 import React from "react";
-=======
-import React, { useEffect } from "react";
->>>>>>> 8e28f0b407a25b7122303b83c3a5f28aa3de6d59
 import "../../App";
 import Swal from "sweetalert2";
 

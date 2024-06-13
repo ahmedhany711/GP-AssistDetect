@@ -1,8 +1,4 @@
 import React from "react";
-<<<<<<< HEAD
-=======
-import image12 from "../../assets/images/12.png";
->>>>>>> 8e28f0b407a25b7122303b83c3a5f28aa3de6d59
 import "./PostCard.scss";
 
 export default function PostCard(props) {
@@ -11,13 +7,9 @@ export default function PostCard(props) {
       <div className=" flex flex-row items-center justify-start gap-3">
         <img
           src={props.src}
-<<<<<<< HEAD
           alt="no imge"
           className="h-20 w-20 rounded-full "
-=======
-          alt="no image"
-          className="h-20 w-20 rounded-full rounded-full"
->>>>>>> 8e28f0b407a25b7122303b83c3a5f28aa3de6d59
+
         />
 
         <div className="flex flex-col justify-center gap-1">

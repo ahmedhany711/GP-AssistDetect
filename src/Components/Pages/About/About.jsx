@@ -1,23 +1,6 @@
 import React from "react";
 import "./AboutPage.scss";
 import { Link } from "react-router-dom";
-<<<<<<< HEAD
-=======
-import image3 from "../../../assets/images/3.jpg";
-import image4 from "../../../assets/images/4.jpg";
-import image5 from "../../../assets/images/5.jpg";
-import image6 from "../../../assets/images/6.jpg";
-import image7 from "../../../assets/images/7.jpg";
-import account from "../../../assets/images/12.png";
-import MemberCard from "../../../Components/MemberCard/MemberCard";
-import Progress from "../../../Components/Progress/Progress";
-import MyCarousel from "../../../Components/MyCarsouel/MyCarsouel";
-import { FaLightbulb } from "react-icons/fa6";
-import { FaHandshakeSimple } from "react-icons/fa6";
-import { FaBrain } from "react-icons/fa6";
-import { FaArrowRight } from "react-icons/fa";
-import Slider from "react-slick";
->>>>>>> 8e28f0b407a25b7122303b83c3a5f28aa3de6d59
 import WhoWeAre from "../../WhoWeAre/WhoWeAre";
 import OurTeam from "../../OurTeam/OurTeam";
 import WhyChooseUs from "../../WhyChooseUs/WhyChooseUs";

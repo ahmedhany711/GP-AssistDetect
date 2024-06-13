@@ -6,11 +6,6 @@ import {
   FaLightbulb,
 } from "react-icons/fa6";
 import { Link } from "react-router-dom";
-<<<<<<< HEAD
-
-=======
-import Testimonials from "../Testimonials/Testimonials";
->>>>>>> 8e28f0b407a25b7122303b83c3a5f28aa3de6d59
 
 const Services = () => {
   return (

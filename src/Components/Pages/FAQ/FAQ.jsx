@@ -1,10 +1,7 @@
 import { React, useState } from "react";
 import Question from "../../Questions/Questions";
 import { Link } from "react-router-dom";
-<<<<<<< HEAD
-=======
-import backgroundImage from "../../../assets/images/6.jpg";
->>>>>>> 8e28f0b407a25b7122303b83c3a5f28aa3de6d59
+
 import Footer from "../../Footer/Footer";
 
 export default function FAQPage({ showFooter, showBanner }) {
@@ -105,6 +102,7 @@ export default function FAQPage({ showFooter, showBanner }) {
             </div>
           </section>
         )}
+        {/* Body */}
         <section
           data-aos="fade-up"
           className=" flex flex-col      my-10  justify-center mx-auto"

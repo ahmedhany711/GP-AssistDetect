@@ -9,10 +9,6 @@ import WhyChooseUs from "../../WhyChooseUs/WhyChooseUs";
 import Services from "../../Services/Services";
 import AboutBanner from "../../AboutBanner";
 import HowItWorks from "../../HowItWorks/HowItWorks";
-<<<<<<< HEAD
-=======
-import Nav from "../../Nav/Nav";
->>>>>>> 8e28f0b407a25b7122303b83c3a5f28aa3de6d59
 
 const Home = () => {
   return (

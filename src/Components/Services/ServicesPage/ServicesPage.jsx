@@ -1,13 +1,4 @@
 import React from "react";
-<<<<<<< HEAD
-=======
-import {
-  FaArrowRight,
-  FaBrain,
-  FaHandshakeSimple,
-  FaLightbulb,
-} from "react-icons/fa6";
->>>>>>> 8e28f0b407a25b7122303b83c3a5f28aa3de6d59
 import { Link } from "react-router-dom";
 import Footer from "../../Footer/Footer";
 import WhyChooseUs from "../../WhyChooseUs/WhyChooseUs";

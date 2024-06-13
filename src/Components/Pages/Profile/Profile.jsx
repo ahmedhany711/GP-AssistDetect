@@ -1,9 +1,5 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-<<<<<<< HEAD
-=======
-import img1 from "../../../assets/images/10.jpg";
->>>>>>> 8e28f0b407a25b7122303b83c3a5f28aa3de6d59
 import Footer from "../../Footer/Footer";
 import { useEffect } from "react";
 export default function Profile() {
@@ -64,7 +60,6 @@ export default function Profile() {
     }
 
     // Update user profile with the provided information
-<<<<<<< HEAD
     // const userProfile = {
     //   email,
     //   fullName,
@@ -72,21 +67,7 @@ export default function Profile() {
     //   image,
     // };
 
-  
 
-
-=======
-    const userProfile = {
-      email,
-      fullName,
-      birth,
-      image,
-    };
-
-    // Here you would send the userProfile object to your server to update the profile
-
-    // Redirect or perform any necessary actions after successful profile update
->>>>>>> 8e28f0b407a25b7122303b83c3a5f28aa3de6d59
   };
   return (
     <>

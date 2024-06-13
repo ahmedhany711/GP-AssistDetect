@@ -1,9 +1,4 @@
 import React from "react";
-<<<<<<< HEAD
-
-=======
-import { useDispatch, useSelector } from "react-redux";
->>>>>>> 8e28f0b407a25b7122303b83c3a5f28aa3de6d59
 import Slider from "react-slick";
 import "../../../src/App.scss";
 import image3 from "../../assets/images/3.jpg";
