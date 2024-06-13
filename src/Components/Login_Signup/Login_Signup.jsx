@@ -14,7 +14,7 @@ const SignUpAndLoginPage = ({ onLogin }) => {
 
   const [isSignUp, setIsSignUp] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  localStorage.setItem("isLogin", isLoggedIn);
+  localStorage.setItem("isLogin?", isLoggedIn);
 
   const [birth, setBirth] = useState("");
 
@@ -42,7 +42,7 @@ const SignUpAndLoginPage = ({ onLogin }) => {
   const handleSignupError = () => {
     let errorMessage = "";
 
-    // Perform form validation
+ 
     if (!email || !password) {
       errorMessage = "All fields are required.";
     } else if (password.length < 8) {
@@ -51,10 +51,10 @@ const SignUpAndLoginPage = ({ onLogin }) => {
       errorMessage = "Passwords Do Not Match";
     }
 
-    // Set the error message
+
     setError(errorMessage);
 
-    // Clear the error message after 2 seconds
+   
     if (errorMessage) {
       setTimeout(() => {
         setError("");
@@ -66,91 +66,95 @@ const SignUpAndLoginPage = ({ onLogin }) => {
   const handleLogin = async (e) => {
     e.preventDefault();
     handleError();
-    try {
-      const response = await fetch(
-        "https://gp-production-ead6.up.railway.app/api/patient/signin",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            email,
-            password,
-          }),
-        }
-      );
+    // try {
+    //   const response = await fetch(
+    //     "https://gp-production-ead6.up.railway.app/api/patient/signin",
+    //     {
+    //       method: "POST",
+    //       headers: {
+    //         "Content-Type": "application/json",
+    //       },
+    //       body: JSON.stringify({
+    //         email,
+    //         password,
+    //       }),
+    //     }
+    //   );
 
-      console.log("Response Headers:", response.headers);
+    //   console.log("Response Headers:", response.headers);
 
-      if (response.ok) {
-        const data = await response.json();
-        console.log("Login successful:", data);
-        localStorage.setItem("token", data.data.token);
-        setIsLoggedIn(true);
-        localStorage.setItem("isLogin", isLoggedIn);
+    //   if (response.ok) {
+    //     const data = await response.json();
+    //     console.log("Login successful:", data);
+    //     localStorage.setItem("token", data.data.token);
+    //     setIsLoggedIn(true);
+    //     localStorage.setItem("isLogin", isLoggedIn);
 
-        setTimeout(() => {
-          // Perform page navigation here
-          window.location.href = "/patient";
-        }, 1000);
+    //     setTimeout(() => {
+    //       // Perform page navigation here
+    //       window.location.href = "/patient";
+    //     }, 1000);
 
-        if (onLogin) {
-          onLogin(email, password);
-        }
-      } else {
-        console.error("Login failed:", response.status);
-        // Handle login failure here
-      }
-    } catch (error) {
-      console.error("Error:", error);
-      // Handle error here
-    }
-    // setIsLoggedIn(true);
-    // window.location.href = "/patient";
+    //     if (onLogin) {
+    //       onLogin(email, password);
+    //     }
+    //   } else {
+    //     console.error("Login failed:", response.status);
+    //     // Handle login failure here
+    //   }
+    // } catch (error) {
+    //   console.error("Error:", error);
+    
+    // }
+    setIsLoggedIn(true);
+    window.location.href = "/patient";
   };
   const handleSignUp = async (e) => {
     e.preventDefault();
     handleSignupError();
-    try {
-      const response = await fetch(
-        "https://gp-production-ead6.up.railway.app/api/patient/signup",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-          },
-          body: JSON.stringify({
-            name: fullName,
-            email: email,
-            password: password,
-            password_confirmation: confirmPassword,
-            birth: birth,
-          }),
-        }
-      );
-      console.log("Response Headers:", response.headers);
-      const data = await response.json();
-      if (response.ok) {
-        console.log("Sign-up successful:", data);
-        localStorage.setItem("token", data.data.token);
-        setIsLoggedIn(true);
-        localStorage.setItem("isLogin", isLoggedIn);
+    setIsLoggedIn(true);
+    localStorage.setItem("isLogin?", isLoggedIn);
 
-        window.location.href = "/patient";
-        // Invoke the onLogin callback if provided
-        if (onLogin) {
-          onLogin(email, password);
-        }
-      } else {
-        console.error("Sign-up failed:", data.message);
-        // Handle sign-up failure here
-      }
-    } catch (error) {
-      console.error("Error:", error);
-      // Handle error here
-    }
+    window.location.href = "/patient";
+    // try {
+    //   const response = await fetch(
+    //     "https://gp-production-ead6.up.railway.app/api/patient/signup",
+    //     {
+    //       method: "POST",
+    //       headers: {
+    //         "Content-Type": "application/json",
+    //         Accept: "application/json",
+    //       },
+    //       body: JSON.stringify({
+    //         name: fullName,
+    //         email: email,
+    //         password: password,
+    //         password_confirmation: confirmPassword,
+    //         birth: birth,
+    //       }),
+    //     }
+    //   );
+    //   console.log("Response Headers:", response.headers);
+    //   const data = await response.json();
+    //   if (response.ok) {
+    //     console.log("Sign-up successful:", data);
+    //     localStorage.setItem("token", data.data.token);
+    //     setIsLoggedIn(true);
+    //     localStorage.setItem("isLogin", isLoggedIn);
+
+    //     window.location.href = "/patient";
+    //     // Invoke the onLogin callback if provided
+    //     if (onLogin) {
+    //       onLogin(email, password);
+    //     }
+    //   } else {
+    //     console.error("Sign-up failed:", data.message);
+    //     // Handle sign-up failure here
+    //   }
+    // } catch (error) {
+    //   console.error("Error:", error);
+     
+    // }
   };
   return (
     <>

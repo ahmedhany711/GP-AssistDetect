@@ -8,7 +8,7 @@ import Footer from "../../Footer/Footer";
 export default function PostsPage(showNav) {
   return (
     <>
-      {showNav && <PatientNav />}
+      
       <div className="mx-auto min-h-screen  bg-light mt-10 py-20 ">
         <div className="flex flex-col justify-center items-center">
           <div className="">

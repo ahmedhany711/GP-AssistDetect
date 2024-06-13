@@ -127,8 +127,7 @@ export default function FormPage() {
   };
   return (
     <>
-      {/* Nav */}
-      {/* <PatientNav /> */}
+    
 
       {/* Body */}
       <div data-aos="fade-up" id="mainsec1" className="col-12 text-paragraph">
