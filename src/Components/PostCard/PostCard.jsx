@@ -9,19 +9,27 @@ export default function PostCard(props) {
           src={props.src}
           alt="no imge"
           className="h-20 w-20 rounded-full "
-
         />
 
         <div className="flex flex-col justify-center gap-1">
           <h3 className="m-0 p-0 font-headingFont">{props.publisherName}</h3>
-          <p className="text-sm m-0 p-0 text-paragraph">
-            {formatDate(props.date)}
-          </p>
+          {props.doctor ? null : (
+            <p className="text-sm m-0 p-0 text-paragraph">
+              {formatDate(props.date)}
+            </p>
+          )}
         </div>
       </div>
-      <div className=" m-2 mt-4 col-12 pl-8">
-        <p>{props.content}</p>
-      </div>
+
+      {props.doctor ? (
+        <div className=" m-2 mt-4 col-12 pl-8">
+          <p>{props.email}</p>
+        </div>
+      ) : (
+        <div className=" m-2 mt-4 col-12 pl-8">
+          <p>{props.content}</p>
+        </div>
+      )}
     </div>
   );
 }

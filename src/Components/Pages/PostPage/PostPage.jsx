@@ -2,7 +2,6 @@ import React from "react";
 import PostCard from "../../PostCard/PostCard";
 import image10 from "../../../assets/images/10.jpg";
 import image11 from "../../../assets/images/11.jpg";
-import PatientNav from "../../Nav/Patient/PatientNav";
 import Footer from "../../Footer/Footer";
 
 export default function PostsPage(showNav) {

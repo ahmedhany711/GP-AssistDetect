@@ -17,6 +17,10 @@ import ContactUs from "./Components/Pages/Contact Us/ContactUS";
 import EditProfilePage from "./Components/Pages/Profile/EditProfile";
 import Profile from "./Components/Pages/Profile/Profile";
 import FAQPage from "./Components/Pages/FAQ/FAQ";
+import DoctorProfile from "./Components/Pages/Profile/DoctorProfile";
+import DoctorEditProfile from "./Components/Pages/Profile/DoctorEditProfile";
+import Doctors from "./Components/Pages/Doctors/Doctors";
+import DoctorsHome from "./Components/Pages/Doctors/DoctorsHome";
 
 function App() {
   // Animation
@@ -43,8 +47,14 @@ function App() {
         <Route path="form" element={<FormPage />} />{" "}
         <Route path="patient" element={<Patient />} />{" "}
         <Route path="blog" element={<PostsPage showNav={true} />} />
+
+        <Route path="doctors" element={<Doctors showNav={true} />} />
+        <Route path="doctorsHome" element={<DoctorsHome  />} />
+        <Route path="doctorProfile" element={<DoctorProfile />} />{" "}
+        <Route path="editDoctorProfile" element={<DoctorEditProfile />} />
+
         <Route path="contact" element={<ContactUs />} />{" "}
-        <Route path="profile" element={<Profile />} />{" "}
+        <Route path="profile" element={<Profile />} />
         <Route
           path="faq"
           element={<FAQPage showFooter={true} showBanner={true} />}

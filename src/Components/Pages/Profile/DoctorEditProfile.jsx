@@ -2,24 +2,24 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Footer from "../../Footer/Footer";
 import img1 from "../../../photos/ui ux home/ahmed.jpg";
-const EditProfilePage = ({ onLogin }) =>
-{
+
+const DoctorEditProfile = ({ onLogin }) => {
   const currentPassword = "123456789";
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [fullName, setFullName] = useState("");
-  const [image, setImage] = useState(img1);
   const [birth, setBirth] = useState("");
+  const [image, setImage] = useState(img1);
   const [changePassword, setChangePassword] = useState(false);
+
   const [bio] = useState("");
 
   // const [bio, setBio] = useState("");
 
   const [error, setError] = useState("");
 
-  const handleSubmit = (e) =>
-  {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     // Perform form validation
@@ -32,8 +32,7 @@ const EditProfilePage = ({ onLogin }) =>
       !bio
     ) {
       setError("All fields are required.");
-      setTimeout(() =>
-      {
+      setTimeout(() => {
         setError("");
       }, 2000);
       return;
@@ -41,8 +40,7 @@ const EditProfilePage = ({ onLogin }) =>
 
     if (password !== confirmPassword) {
       setError("Passwords do not match.");
-      setTimeout(() =>
-      {
+      setTimeout(() => {
         setError("");
       }, 2000);
       return;
@@ -58,19 +56,16 @@ const EditProfilePage = ({ onLogin }) =>
     //   bio,
     // };
   };
-  const handleImageChange = (e) =>
-  {
+  const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
       const reader = new FileReader();
-      reader.onload = (event) =>
-      {
+      reader.onload = (event) => {
         setImage(event.target.result);
       };
       reader.readAsDataURL(file);
     }
   };
-
   return (
     <>
       <div className="min-h-screen flex items-center justify-center pt-5 px-4 sm:px-6 lg:px-8 mb-20">
@@ -78,7 +73,7 @@ const EditProfilePage = ({ onLogin }) =>
           {/* Heading (Image) */}
           <div className="flex justify-between items-start mt-20">
             <h2 className="mt-4  text-left font-headingFont text-5xl font-extrabold text-paragraph">
-              Edit Profile
+              Edit Doctor Profile
             </h2>
             <div
               className="cursor-pointer"
@@ -89,7 +84,8 @@ const EditProfilePage = ({ onLogin }) =>
           </div>
 
           {/* Body  */}
-          <form className="mt-8 space-y-6 " onSubmit={handleSubmit}>
+
+          <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
             <input
               type="file"
               id="imageInput"
@@ -141,7 +137,7 @@ const EditProfilePage = ({ onLogin }) =>
                   />
                 </div>
               </div>
-              {/* Email */}
+
               <div>
                 <label
                   htmlFor="email"
@@ -170,10 +166,10 @@ const EditProfilePage = ({ onLogin }) =>
                   }}
                   className=" text-nav px-4 py-2 rounded-md no-underline text-sm   hover:scale-x-110"
                 >
-                  {changePassword ? "Canel Change Password" :"Change Password ?"} 
+                  {changePassword ? "Canel Change Password" : "Change Password ?"}
                 </button>
               </div>
-            
+
               {/* if click on change password */}
               {changePassword && (
                 <>
@@ -245,7 +241,6 @@ const EditProfilePage = ({ onLogin }) =>
                   </div>
                 </>
               )}
-
               {/* Bio */}
               {/* <div>
               <label
@@ -268,7 +263,7 @@ const EditProfilePage = ({ onLogin }) =>
 
             <div className="flex gap-4 pt-3">
               <Link
-                to={"/profile"}
+                to={"/doctorProfile"}
                 type="reset"
                 className="group relative w-full flex justify-center  no-underline py-2 px-4 border border-transparent text-xl font-medium rounded-md text-nav ring-nav outline-none ring-2 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-nav hover:bg-nav hover:text-white"
               >
@@ -291,4 +286,4 @@ const EditProfilePage = ({ onLogin }) =>
   );
 };
 
-export default EditProfilePage;
+export default DoctorEditProfile;

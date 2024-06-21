@@ -2,21 +2,16 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Footer from "../../Footer/Footer";
 import { useEffect } from "react";
-import img1 from "../../../photos/ui ux home/ahmed.jpg";
 
-export default function Profile()
-{
+export default function DoctorProfile() {
   const [email, setEmail] = useState("");
-  // const [image, setImage] = useState("");
-  const [image, setImage] = useState(img1);
+  const [image, setImage] = useState("");
   const [fullName, setFullName] = useState("");
   const [birth, setBirth] = useState("");
   const [error, setError] = useState("");
 
-  useEffect(() =>
-  {
-    const fetchUserProfile = async () =>
-    {
+  useEffect(() => {
+    const fetchUserProfile = async () => {
       const token = localStorage.getItem("token");
       try {
         const response = await fetch(
@@ -54,14 +49,12 @@ export default function Profile()
     fetchUserProfile();
   }, []);
 
-  const handleSubmit = async (e) =>
-  {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     // Perform form validation
     if (!email || !fullName || !birth) {
       setError("All fields are required.");
-      setTimeout(() =>
-      {
+      setTimeout(() => {
         setError("");
       }, 2000);
       return;
@@ -74,8 +67,6 @@ export default function Profile()
     //   birth,
     //   image,
     // };
-
-
   };
   return (
     <>
@@ -84,7 +75,7 @@ export default function Profile()
           {/* Heading */}
           <div className="flex justify-between items-start mt-3">
             <h2 className="mt-4  text-left font-headingFont text-5xl font-extrabold text-paragraph">
-              Profile
+              Doctor Profile
             </h2>
             <div className="">
               <img src={image} alt="" className="w-28 h-28 rounded-full " />
@@ -155,7 +146,7 @@ export default function Profile()
             {/* Buttons */}
             <div className="flex gap-4 pt-3">
               <Link
-                to={"/editprofile"}
+                to={"/editDoctorProfile"}
                 type="submit"
                 className="group relative w-full flex justify-center  no-underline py-2 px-4 border border-transparent text-xl font-medium rounded-md text-nav ring-nav outline-none ring-2 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-nav hover:bg-nav hover:text-white"
               >
