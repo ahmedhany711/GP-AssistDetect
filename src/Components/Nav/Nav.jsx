@@ -4,6 +4,9 @@ import { Link } from "react-router-dom";
 import { IoNotifications } from "react-icons/io5";
 import { FaBars, FaTimes } from "react-icons/fa";
 import logo from "../../photos/ui ux home/FinalLog-removebg-preview.png";
+import { MdKeyboardArrowUp } from "react-icons/md";
+import { MdOutlineKeyboardArrowDown } from "react-icons/md";
+
 
 const Nav = () =>
 {
@@ -132,9 +135,14 @@ const Nav = () =>
                 <div className="relative">
                   <button
                     onClick={toggleDropdown}
-                    className="text-white no-underline px-3 text-lg lg:text-xl duration-300 hover:text-active inline-block"
+                    className="text-white no-underline px-3 text-lg lg:text-xl duration-300 hover:text-active hover:bg-white/10 inline-block"
                   >
-                    Manage
+                    {dropdownOpen ? (<div className="flex items-center gap-1 ">
+                      <span>Manage</span> <MdKeyboardArrowUp className="text-2xl" />
+                    </div>) :
+                      (<div className="flex items-center gap-1 ">
+                        <span>Manage</span> <MdOutlineKeyboardArrowDown className="text-2xl" />
+                      </div>)}
                   </button>
                   {dropdownOpen && (
                     <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg z-50">
@@ -173,6 +181,7 @@ const Nav = () =>
             <div className="flex" onClick={() => (window.location.href = "/NotificationPage")}>
               <IoNotifications className="text-2xl md:text-3xl text-white hover:animate-wiggle cursor-pointer duration-300" />
             </div>
+            
             {/* Login Button for Large Screens */}
             <div className="block">{handleButtons()}</div>
           </Container>
@@ -205,7 +214,13 @@ const Nav = () =>
                     onClick={toggleDropdown}
                     className="text-white no-underline py-2 text-lg w-full duration-300 hover:bg-white/10 inline-block text-left"
                   >
-                    Manage
+                    {dropdownOpen ? (<div className="flex items-center gap-1 ">
+                      <span>Manage</span> <MdKeyboardArrowUp className="text-2xl" />
+                    </div>) : 
+                      (<div className="flex items-center gap-1 ">
+                        <span>Manage</span> <MdOutlineKeyboardArrowDown className="text-2xl" />
+                      </div>)}
+                    
                   </button>
                   {dropdownOpen && (
                     <div className="bg-white rounded-md shadow-lg z-50 my-2 pb-10">

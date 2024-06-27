@@ -6,7 +6,8 @@ import { FaTwitter } from "react-icons/fa6";
 import { FaChevronRight } from "react-icons/fa6";
 import { MdOutlineEmail } from "react-icons/md";
 
-const Footer = () => {
+const Footer = () =>
+{
   return (
     <div
       data-aos="zoom-out"
@@ -25,7 +26,7 @@ const Footer = () => {
               <img
                 src={logo}
                 alt="logo"
-                className="w-[350px] h-[150px] -mt-11"
+                className="w-[300px] h-[100px] -mt-11"
               />
             </div>
             <div>
@@ -96,7 +97,7 @@ const Footer = () => {
                 <h3 className="font-headingFont pb-2">Quick Links</h3>
               </div>
               {/* List */}
-              <div className="grid grid-cols-2">
+              <div className="grid grid-cols-1">
                 {/* Col 1 */}
                 <div className=" flex flex-col gap-3 text-xl">
                   {/* Home */}
@@ -140,19 +141,16 @@ const Footer = () => {
                   <div className=" flex  gap-2 items-center justify-start  ">
                     <FaChevronRight />
                     <a
-                      href="/team"
+                      href="/doctors"
                       className="text-xl
                                             text-white no-underline  font-semibold
                                             hover:text-active hover:translate-x-1 duration-300"
                     >
                       {" "}
-                      Team
+                      Doctors Team
                     </a>
                   </div>
-                </div>
-                {/* Col 2 */}
-                <div className="flex flex-col gap-3 text-xl">
-                  <div className=" flex  gap-2 items-center justify-start mt-4   ">
+                  <div className=" flex  gap-2 items-center justify-start    ">
                     <FaChevronRight />
                     <a
                       href="/contact"
@@ -163,30 +161,11 @@ const Footer = () => {
                       Contact Us
                     </a>
                   </div>
-                  {/* Profile */}
-                  <div className=" flex  gap-2 items-center justify-start   ">
-                    <FaChevronRight />
-                    <a
-                      href="/profile"
-                      className="text-xl
-                                            text-white no-underline my-1 font-semibold
-                                            hover:text-active hover:translate-x-1 duration-300"
-                    >
-                      Profile
-                    </a>
-                  </div>
-                  {/* FAQ */}
-                  <div className=" flex  gap-2 items-center justify-start   ">
-                    <FaChevronRight />
-                    <a
-                      href="/faq"
-                      className="text-xl
-                                            text-white no-underline my-1 font-semibold
-                                            hover:text-active hover:translate-x-1 duration-300"
-                    >
-                      FAQ
-                    </a>
-                  </div>
+                </div>
+                {/* Col 2 */}
+                <div className="flex flex-col gap-3 text-xl">
+
+
                 </div>
               </div>
             </div>
@@ -194,7 +173,7 @@ const Footer = () => {
 
           {/* 3rd column  Services*/}
           <div data-aos="fade-up" className=" font-contentFont">
-            <div className="max-w-[400px]">
+            <div className="max-w-[450px]">
               {/* Title */}
               <div className="border-b-2 w-[150px]">
                 <h3 className="font-headingFont pb-2">Services</h3>
@@ -204,7 +183,7 @@ const Footer = () => {
                 <div className=" flex  gap-2 items-center justify-start  mt-4 ">
                   <FaChevronRight />
                   <a
-                    href="/Individual"
+                    href="/faq"
                     className="text-xl
                                             text-white no-underline  font-semibold
                                             hover:text-active hover:translate-x-1 duration-300"
@@ -215,7 +194,7 @@ const Footer = () => {
                 <div className=" flex  gap-2 items-center justify-start ">
                   <FaChevronRight />
                   <a
-                    href="/Couple"
+                    href="/blog"
                     className="text-xl
                                             text-white no-underline my-1 font-semibold
                                             hover:text-active hover:translate-x-1 duration-300"
@@ -226,7 +205,8 @@ const Footer = () => {
                 <div className=" flex  gap-2 items-center justify-start   ">
                   <FaChevronRight />
                   <a
-                    href="/Family"
+                    href="/doctors
+                    "
                     className="text-xl
                                             text-white no-underline my-1 font-semibold
                                             hover:text-active hover:translate-x-1 duration-300"
@@ -235,17 +215,7 @@ const Footer = () => {
                     Meet with Doctor
                   </a>
                 </div>
-                <div className=" flex  gap-2 items-center justify-start   ">
-                  <FaChevronRight />
-                  <a
-                    href="/Career"
-                    className="text-xl
-                                            text-white no-underline my-1 font-semibold
-                                            hover:text-active hover:translate-x-1 duration-300"
-                  >
-                    Career Counseling Us
-                  </a>
-                </div>
+              
               </div>
             </div>
           </div>
