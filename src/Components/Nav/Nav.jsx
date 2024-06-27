@@ -52,9 +52,9 @@ const Nav = () =>
   } else {
     filteredMenu = [
       { id: 1, name: "Home", link: "/" },
-      { id: 2, name: "About Us", link: "/about" },
+      { id: 2, name: "About ", link: "/about" },
       { id: 3, name: "Services", link: "/services" },
-      { id: 4, name: "Contact Us", link: "/contact" },
+      { id: 4, name: "Contact ", link: "/contact" },
       { id: 5, name: "Doctors", link: "/doctors" },
       { id: 6, name: "FAQ", link: "/faq" },
     ];
@@ -125,7 +125,9 @@ const Nav = () =>
                       className={`${data.id === activeLink
                         ? "text-active"
                         : "text-white hover:text-active"
-                        } no-underline px-3 text-lg lg:text-xl duration-300 hover:bg-white/10 inline-block`}
+                        } 
+                       
+                        no-underline px-3 text-[17px]  duration-300 hover:bg-white/10 inline-block`}
                     >
                       {data.name}
                     </Link>

@@ -64,7 +64,7 @@ const WhoWeAre = ({ showButton }) =>
               />
             </div>{" "}
             {/* Box */}
-            <div data-aos="fade-up" className="mx-auto xl:ml-auto ">
+            <div data-aos="fade-up" className="mx-auto  ">
               <Box />
             </div>
           </div>

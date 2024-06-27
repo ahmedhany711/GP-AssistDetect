@@ -121,7 +121,7 @@ export default function FAQPage({ showFooter })
           <div className="  container">
             <div
               data-aos="fade-up"
-              className="questions_div  grid grid-cols-1 lg:grid-cols-2 gap-x-4 gap-y-10 "
+              className="questions_div  grid grid-cols-1 lg:grid-cols-2 gap-x-10 gap-y-10 "
             >
               {questions.map((item, index) => (
                 <Question
