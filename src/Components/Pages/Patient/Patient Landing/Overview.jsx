@@ -1,26 +1,25 @@
 import React, { useState } from "react";
-import image2 from "../../../../assets/images/Home-banner.jpg";
 import { Link } from "react-router-dom";
 import FAQPage from "../../FAQ/FAQ";
 export default function Overview({ showFaq }) {
      const [isFaqVisible, setIsFaqVisible] = useState(showFaq);
   return (
-    <div>
-      <section id="" className="my-5 mx-5">
+    <div className="bg-light">
+      <section id="" className=" my-5 mx-5 py-5">
         <div
           data-aos="fade-up"
           data-offset={100}
-          className=" grid grid-cols-2  gap-5 items-start"
+          className=" grid grid-cols-1   gap-5 items-center"
         >
           {/* Text */}
           <div className="  ">
             {/* Title */}
-            <h1 className="font-headingFont font-bold text-5xl mb-4">
+            <h1 className="font-headingFont font-bold text-5xl mb-4 text-nav">
               Overview
             </h1>
 
             {/* P Container */}
-            <div className="text-paragraph text-lg">
+            <div className="text-paragraph text-lg ">
               <p className="col-10">
                 Depressive disorder (also known as depression) is a common
                 mental disorder. It involves a depressed mood or loss of
@@ -59,16 +58,8 @@ export default function Overview({ showFaq }) {
               </p>
             </div>
           </div>
-          {/* Image */}
-          <div className="flex justify-end my-auto">
-            <img
-              src={image2}
-              alt=""
-              className=" rounded-3xl w-[80%] h-[450px]"
-            />
-          </div>
         </div>
-        <div data-aos="fade-up" className="  mt-5 flex justify-start  ">
+        <div  className="  mt-5 flex justify-start  ">
           <Link
             onClick={() => {
               setIsFaqVisible(!isFaqVisible);

@@ -3,26 +3,32 @@ import image2 from "../../assets/images/2.jpg";
 import { Link } from "react-router-dom";
 import Box from "../Box/Box";
 
-const WhoWeAre = ({ showButton }) => {
+const WhoWeAre = ({ showButton }) =>
+{
   return (
     <div>
       {/* WHo We Are? */}
-      <section id="" className="my-5 mx-5">
+      <section id="" className="my-5 mx-5 overflow-hidden">
+        <div className="  ">
+          <h5 className="mb-4 text-xl font-semibold">ABOUT ASSISTDETECT</h5>
+          {/* Title */}
+          <h1 className="font-headingFont font-bold text-6xl mb-4">
+            Who we are?
+          </h1>
+        </div>
+        {/* 2 grids */}
         <div
           data-aos="fade-up"
           data-offset={300}
-          className=" grid grid-cols-2  items-start"
+          className=" grid grid-cols-1 lg:grid-cols-2  items-start lg:gap-4"
         >
+
           {/* Text */}
-          <div className="space-y-10  ">
-            <h5 className="mb-4 text-xl font-semibold">ABOUT ASSISTDETECT</h5>
-            {/* Title */}
-            <h1 className="font-headingFont font-bold text-6xl mb-4">
-              Who we are?
-            </h1>
+          <div className="space-y-10   ">
+
 
             {/* P Container */}
-            <div className="text-paragraph text-xl">
+            <div className="text-paragraph text-sm md:text-lg ">
               <p className="col-10">
                 Welcome to our empowering online community dedicated to
                 overcoming depression.
@@ -47,8 +53,9 @@ const WhoWeAre = ({ showButton }) => {
               </p>
             </div>
           </div>
+
           {/* Image */}
-          <div className="flex flex-col gap-3 justify-center mt-4 items-end">
+          <div className="flex flex-col gap-3 justify-center mt-4 items-center lg:items-end mb-12">
             <div>
               <img
                 src={image2}
@@ -57,7 +64,7 @@ const WhoWeAre = ({ showButton }) => {
               />
             </div>{" "}
             {/* Box */}
-            <div data-aos="fade-up">
+            <div data-aos="fade-up" className="mx-auto xl:ml-auto ">
               <Box />
             </div>
           </div>
@@ -72,7 +79,7 @@ const WhoWeAre = ({ showButton }) => {
           >
             <Link
               to={"/about"}
-              className="border-4 no-underline border-nav px-5 py-3 rounded-lg text-nav text-3xl font-headingFont  duration-300 hover:bg-nav hover:text-white mb-3"
+              className="border-4 no-underline border-nav px-3 py-1 lg:px-5 lg:py-3 rounded-lg text-nav text-xl lg:text-2xl font-headingFont  duration-300 hover:bg-nav hover:text-white mb-3"
             >
               {" "}
               Read More

@@ -3,38 +3,38 @@ import image1 from "../../../../assets/images/16.jpg";
 import Box from "../../../Box/Box";
 export default function PatientLanding() {
   return (
-    <div className="px-6 mx-auto mb-28">
-      <section id="" className="my-5 mx-5">
+    <div className="px-4 mx-auto mb-28">
+      <section id="" className="my-5 mx-4">
         {/* WHo We Are? */}
         <div
           data-aos="fade-up"
           data-offset={100}
-          className=" grid grid-cols-2  items-start"
+          className=" grid grid-cols-1 lg:grid-cols-2 gap-5 items-start"
         >
           {/* Text */}
-          <div className="  mt-3">
+          <div className="  mt-3 mb-7">
             {/* Title */}
             <h1 className="font-headingFont font-bold text-6xl mb-10 ">
               Key Facts
             </h1>
 
             {/* List */}
-            <div className="flex flex-col justify-center gap-4  ">
+            <div className="flex flex-col justify-start items-start gap-4  ">
               {/* 1 */}
-              <div className="flex gap-8 items-center">
-                <div className="bg-nav  font-semibold w-14 h-14 rounded-full  flex justify-center text-center items-center ">
-                  <span className="  text-white text-2xl  ">1</span>
+              <div className="flex gap-4 items-center justify-between">
+                <div className="bg-nav  font-semibold px-3 w-12 h-12 rounded-full  flex justify-center text-center items-center ">
+                  <span className="  text-white text-xl  ">1</span>
                 </div>
                 {/* text */}
-                <h4 className="font-headingFont mb-0  text-paragraph">
+                <h4 className="font-headingFont mb-0   text-paragraph">
                   Depression is a common mental disorder.
                 </h4>
               </div>
 
               {/* 2 */}
-              <div className="flex gap-8 items-center">
-                <div className="bg-nav  font-semibold w-14 h-14 rounded-full  flex justify-center text-center items-center ">
-                  <span className="  text-white text-2xl  ">2</span>
+              <div className="flex gap-4 items-center">
+                <div className="bg-nav  font-semibold px-3 w-12 h-12 rounded-full  flex justify-center text-center items-center ">
+                  <span className="  text-white text-xl  ">2</span>
                 </div>
                 {/* text */}
                 <h4 className="font-headingFont mb-0 text-paragraph">
@@ -43,9 +43,9 @@ export default function PatientLanding() {
               </div>
 
               {/* 3 */}
-              <div className="flex gap-8 items-center">
-                <div className="bg-nav  font-semibold w-14 h-14 rounded-full  flex justify-center text-center items-center ">
-                  <span className="  text-white text-2xl  ">3</span>
+              <div className="flex gap-4 items-center">
+                <div className="bg-nav  font-semibold px-3 w-12 h-12 rounded-full  flex justify-center text-center items-center ">
+                  <span className="  text-white text-xl  ">3</span>
                 </div>
                 {/* text */}
                 <h4 className="font-headingFont mb-0 text-paragraph">
@@ -53,9 +53,9 @@ export default function PatientLanding() {
                 </h4>
               </div>
               {/* 4*/}
-              <div className="flex gap-8 items-center">
-                <div className="bg-nav  font-semibold w-14 h-14 rounded-full  flex justify-center text-center items-center ">
-                  <span className="  text-white text-2xl  ">4</span>
+              <div className="flex gap-4 items-center">
+                <div className="bg-nav  font-semibold px-3 w-12 h-12 rounded-full  flex justify-center text-center items-center ">
+                  <span className="  text-white text-xl  ">4</span>
                 </div>
                 {/* text */}
                 <h4 className="font-headingFont mb-0 text-paragraph">
@@ -63,9 +63,9 @@ export default function PatientLanding() {
                 </h4>
               </div>
               {/* 5*/}
-              <div className="flex gap-8 items-center">
-                <div className="bg-nav  font-semibold w-14 h-14 rounded-full  flex justify-center text-center items-center ">
-                  <span className=" text-white text-2xl "> 5 </span>
+              <div className="flex gap-4 items-center">
+                <div className="bg-nav  font-semibold px-3 w-12 h-12 rounded-full  flex justify-center text-center items-center ">
+                  <span className=" text-white text-xl "> 5 </span>
                 </div>
                 {/* text */}
                 <h4 className="font-headingFont mb-0  text-paragraph">

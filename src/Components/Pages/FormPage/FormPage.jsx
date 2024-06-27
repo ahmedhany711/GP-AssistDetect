@@ -132,8 +132,8 @@ export default function FormPage() {
       {/* Body */}
       <div data-aos="fade-up" id="mainsec1" className="col-12 text-paragraph">
         {/* Title */}
-        <div id="header_content" className="col-12 mt-32">
-          <h1 className="col-12 text-gray-900 font-headingFont ">
+        <div id="header_content" className="col-12 mt-40 mx-auto px-4">
+          <h1 className="col-12 text-nav font-headingFont ">
             Questionnaire
           </h1>
           <p className="col-12  font-headingFont text-xl">

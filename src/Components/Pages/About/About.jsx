@@ -2,12 +2,12 @@ import React from "react";
 import "./AboutPage.scss";
 import { Link } from "react-router-dom";
 import WhoWeAre from "../../WhoWeAre/WhoWeAre";
-import OurTeam from "../../OurTeam/OurTeam";
 import WhyChooseUs from "../../WhyChooseUs/WhyChooseUs";
 import Services from "../../Services/Services";
 import Testimonials from "../../Testimonials/Testimonials";
 import AboutBanner from "../../AboutBanner";
 import Footer from "../../Footer/Footer";
+import Doctors from "../Doctors/Doctors";
 
 export default function AboutPage() {
   return (
@@ -48,7 +48,8 @@ export default function AboutPage() {
       </div>
 
       {/* OUR TEAM */}
-      <OurTeam />
+      {/* <OurTeam /> */}
+      <Doctors showNav={false}/>
 
       {/* Why Choose US */}
       <WhyChooseUs />

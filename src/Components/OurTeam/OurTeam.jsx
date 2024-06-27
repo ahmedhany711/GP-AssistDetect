@@ -19,7 +19,7 @@ const OurTeam = ({ showFooter }) => {
           <h1 className="font-headingFont">Experienced Pyschologist</h1>
         </div>
         {/* Images */}
-        <div id="" className="grid grid-cols-3">
+        <div id="" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           <MemberCard img={image3} name="Mona M. Amer" />
           <MemberCard img={image4} name="Ahmed Okasha" />
           <MemberCard img={image5} name="Rania El Mahdy" />

@@ -83,7 +83,7 @@ export default function Profile()
         <div className="max-w-4xl w-full space-y-8">
           {/* Heading */}
           <div className="flex justify-between items-start mt-3">
-            <h2 className="mt-4  text-left font-headingFont text-5xl font-extrabold text-paragraph">
+            <h2 className="mt-4  text-left font-headingFont text-5xl font-extrabold text-nav">
               Profile
             </h2>
             <div className="">

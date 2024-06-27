@@ -3,9 +3,10 @@ import { MdOutlineMail } from "react-icons/md";
 import { RiLockPasswordLine } from "react-icons/ri";
 import { FaCalendarAlt, FaPen } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import Footer from "../Footer/Footer";
 
-const SignUpAndLoginPage = ({ onLogin }) => {
+const SignUpAndLoginPage = () =>
+{
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -18,7 +19,8 @@ const SignUpAndLoginPage = ({ onLogin }) => {
 
   const [birth, setBirth] = useState("");
 
-  const handleError = () => {
+  const handleError = () =>
+  {
     let errorMessage = "";
 
     // Perform form validation
@@ -33,16 +35,18 @@ const SignUpAndLoginPage = ({ onLogin }) => {
 
     // Clear the error message after 2 seconds
     if (errorMessage) {
-      setTimeout(() => {
+      setTimeout(() =>
+      {
         setError("");
       }, 5000);
       return;
     }
   };
-  const handleSignupError = () => {
+  const handleSignupError = () =>
+  {
     let errorMessage = "";
 
- 
+
     if (!email || !password) {
       errorMessage = "All fields are required.";
     } else if (password.length < 8) {
@@ -54,16 +58,18 @@ const SignUpAndLoginPage = ({ onLogin }) => {
 
     setError(errorMessage);
 
-   
+
     if (errorMessage) {
-      setTimeout(() => {
+      setTimeout(() =>
+      {
         setError("");
       }, 5000);
       return;
     }
   };
   //  19|mH3L1c6wCCNWTgg2IfJyuY5PIfoxL3lry70nr6rpd0e042c8
-  const handleLogin = async (e) => {
+  const handleLogin = async (e) =>
+  {
     e.preventDefault();
     handleError();
     // try {
@@ -104,12 +110,13 @@ const SignUpAndLoginPage = ({ onLogin }) => {
     //   }
     // } catch (error) {
     //   console.error("Error:", error);
-    
+
     // }
     setIsLoggedIn(true);
     window.location.href = "/patient";
   };
-  const handleSignUp = async (e) => {
+  const handleSignUp = async (e) =>
+  {
     e.preventDefault();
     handleSignupError();
     setIsLoggedIn(true);
@@ -153,7 +160,7 @@ const SignUpAndLoginPage = ({ onLogin }) => {
     //   }
     // } catch (error) {
     //   console.error("Error:", error);
-     
+
     // }
   };
   return (
@@ -163,10 +170,10 @@ const SignUpAndLoginPage = ({ onLogin }) => {
           {/* Header */}
           <div>
             <h2 className="font-headingFont mt-6 text-center text-5xl font-extrabold text-nav ">
-              {isSignUp ? "Sign Up" : "Log In"}
+              {isSignUp ? "Sign Up as Patient" : "Log In as Patient"}
             </h2>
           </div>
-
+        
           {/* Form Body */}
           <form
             className="mt-8 space-y-6"
@@ -337,7 +344,6 @@ const SignUpAndLoginPage = ({ onLogin }) => {
           </form>
         </div>
       </div>
-      <Footer />
     </>
   );
 };

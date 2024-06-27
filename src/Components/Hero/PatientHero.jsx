@@ -4,20 +4,20 @@ import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 const PatientHero = () => {
   return (
-    <div id="gpBanner" data-aos="zoom-out" className="relative px-0 py-16">
+    <div id="gpBanner" data-aos="zoom-out" className="relative px-4 py-16">
       {/* OverLay */}
       <div
         id="overlay"
         className="absolute top-0 left-0 w-full h-full bg-homeOverly opacity-65 px-8 py-16"
       ></div>
       {/* Text area */}
-      <div className="container mx-auto w-[1400px] pb-28">
-        <div className="text-white absolute top-[60%] left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          <div className="flex flex-col justify-center items-center gap-4 text-center">
+      <div className="container mx-auto  w-full px-4 md:px-8 lg:px-16 xl:px-20 pb-28">
+        <div className="text-white absolute top-[60%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full">
+          <div className="flex flex-col justify-center items-center gap-4 text-center px-4 md:px-8 lg:px-16">
             {/* Title */}
             <div
               data-aos="zoom-in"
-              className=" font-headingFont text-8xl font-medium w-[1050px]"
+              className="font-headingFont text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold lg:font-medium w-full max-w-[1050px]"
             >
               Conquer depression with our guidance
             </div>
@@ -25,7 +25,7 @@ const PatientHero = () => {
             <div
               data-aos="fade-up"
               data-aos-offset="-100"
-              className="font-contentFont text-sm max-w-[900px] mt-2"
+              className="font-contentFont text-xs sm:text-sm md:text-base max-w-[900px] mt-2"
             >
               <p data-aos="fade-up" data-aos-offset="-100">
                 Explore, overcome, and thrive with our platform. Connect with
@@ -38,15 +38,13 @@ const PatientHero = () => {
             <div
               data-aos="fade-up"
               data-aos-offset="-100"
-              className="flex justify-center gap-3 items-center "
+              className="flex flex-col sm:flex-row justify-center gap-10 sm:gap-3 items-center"
             >
               {/* 1st */}
               <div>
                 <Link
                   to={"/form"}
-                  className="no-underline 
-                            text-white text-center bg-nav  
-                             hover:bg-transparent hover:border-2 hover:border-white py-3 px-5 rounded-md text-xl font-contentFont font-light my-auto"
+                  className=" no-underline text-white bg-transparent hover:bg-white hover:text-navbarColor border-2 hover:border-0 border-white   py-3 px-5 rounded-md text-lg xl:text-xl font-contentFont font-light"
                 >
                   DETECT
                 </Link>
@@ -75,7 +73,7 @@ const PatientHero = () => {
                       confirmButtonAriaLabel: "Sorry !",
                     });
                   }}
-                  className=" no-underline text-white bg-transparent hover:bg-white hover:text-navbarColor border-2 hover:border-0 border-white   py-3 px-5 rounded-md text-xl font-contentFont font-light"
+                  className=" no-underline text-white bg-transparent hover:bg-white hover:text-navbarColor border-2 hover:border-0 border-white   py-3 px-5 rounded-md text-lg xl:text-xl font-contentFont font-light"
                 >
                   MEET
                 </Link>

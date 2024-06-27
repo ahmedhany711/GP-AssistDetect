@@ -21,10 +21,19 @@ import DoctorProfile from "./Components/Pages/Profile/DoctorProfile";
 import DoctorEditProfile from "./Components/Pages/Profile/DoctorEditProfile";
 import Doctors from "./Components/Pages/Doctors/Doctors";
 import DoctorsHome from "./Components/Pages/Doctors/DoctorsHome";
+import NotificationPage from "./Components/Pages/Notification page/NotificationPage";
+import LoginSignupDoctor from "./Components/Login_Signup/Login_Signup_Doctor";
+import Choose from "./Components/Login_Signup/choose";
+import ManagePosts from "./Components/Pages/Manage Posts/ManagePosts";
+import ManageAvailability from "./Components/Pages/Manage Availability/ManageAvailability";
+import ManageUsers from "./Components/Pages/Manage Users/ManageUsers";
+import ManageMeeting from "./Components/Pages/Manage Meeting/ManageMeeting";
 
-function App() {
+function App()
+{
   // Animation
-  useEffect(() => {
+  useEffect(() =>
+  {
     Aos.init({
       startEvent: "load",
       offset: 100,
@@ -36,30 +45,41 @@ function App() {
   }, []);
 
   return (
-    <div id="body" className="font-contentFont">
+    <div id="body" className="font-contentFont overflow-hidden">
       <Nav /> {/* <FAQPage/> */}{" "}
       <Routes>
         <Route path="/" element={<Home />} />{" "}
+        <Route path="choose" element={<Choose />} />{" "}
         <Route path="signIn" element={<SignUpAndLoginPage />} />{" "}
-        <Route path="about" element={<AboutPage />} />{" "}
+        <Route path="doctorSigIn" element={<LoginSignupDoctor />} />
         <Route path="services" element={<ServicesPage />} />{" "}
         <Route path="team" element={<OurTeam showFooter={false} />} />{" "}
-        <Route path="form" element={<FormPage />} />{" "}
-        <Route path="patient" element={<Patient />} />{" "}
-        <Route path="blog" element={<PostsPage showNav={true} />} />
-
-        <Route path="doctors" element={<Doctors showNav={true} />} />
-        <Route path="doctorsHome" element={<DoctorsHome  />} />
-        <Route path="doctorProfile" element={<DoctorProfile />} />{" "}
-        <Route path="editDoctorProfile" element={<DoctorEditProfile />} />
-
-        <Route path="contact" element={<ContactUs />} />{" "}
-        <Route path="profile" element={<Profile />} />
+        <Route path="about" element={<AboutPage />} />{" "}
+        <Route path="form" element={<FormPage />} />{" "} 
         <Route
           path="faq"
           element={<FAQPage showFooter={true} showBanner={true} />}
         />
+        <Route path="patient" element={<Patient />} />{" "}
+        <Route path="blog" element={<PostsPage showNav={true} />} />
+        <Route path="doctors" element={<Doctors showNav={true} />} />
+        <Route path="doctorsHome" element={<DoctorsHome />} />
+        <Route path="doctorProfile" element={<DoctorProfile />} />{" "}
         <Route path="editprofile" element={<EditProfilePage />} />
+        <Route path="editDoctorProfile" element={<DoctorEditProfile />} />
+        <Route path="profile" element={<Profile />} />
+        <Route path="NotificationPage" element={<NotificationPage />} />{" "}
+        <Route path="contact" element={<ContactUs />} />{" "}
+        <Route path="managePosts" element={<ManagePosts />} />
+        <Route path="ManageUsers" element={<ManageUsers />} />
+        <Route path="ManageAvailability" element={<ManageAvailability />} />
+        <Route path="ManageMeeting" element={<ManageMeeting />} />
+
+        
+     
+
+        
+
       </Routes>{" "}
     </div>
   );

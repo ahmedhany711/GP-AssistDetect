@@ -8,7 +8,7 @@ const Landing = () => {
             <div className='container'>
                 <div className=''>
                     <div
-                        className='grid  grid-cols-2 sm:grid-cols-3 md:grid-cols-3   overflow-hidden gap-20 sm:gap-8 place-items-center items-center z-100  mt-5  '
+                        className='grid  grid-cols-1 sm:grid-cols-2 lg:grid-cols-3   overflow-hidden gap-20 sm:gap-8 place-items-center items-center z-100  mt-5  '
                     >
                         {/* 1st card */}
                         <div

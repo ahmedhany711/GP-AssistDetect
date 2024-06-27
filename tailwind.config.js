@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-    content: ["./src/**/*.{js,jsx,ts,tsx}",],
+    content: ["./src/**/*.{js,jsx,ts,tsx}", ],
     important: true,
     darkMode: "class",
     theme: {
@@ -34,9 +34,20 @@ module.exports = {
                     DEFAULT: '1rem',
                     sm: '3rem'
                 }
-            }
+            },
+            keyframes: {
+                wiggle: {
+                    '0%, 100%': { transform: 'rotate(0deg)' },
+                    '25%': { transform: 'rotate(15deg)' },
+                    '50%': { transform: 'rotate(0deg)' },
+                    '75%': { transform: 'rotate(-15deg)' },
+                },
+            },
+            animation: {
+                wiggle: 'wiggle 1s ease-in-out infinite',
+            },
         },
     },
+
     plugins: [],
 }
-

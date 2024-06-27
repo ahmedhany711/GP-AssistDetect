@@ -4,10 +4,12 @@ import { Link } from "react-router-dom";
 
 import Footer from "../../Footer/Footer";
 
-export default function FAQPage({ showFooter, showBanner }) {
+export default function FAQPage({ showFooter })
+{
   const [isOpen, setIsOpen] = useState(Array(2).fill(false));
 
-  const toggleAccordion = (index) => {
+  const toggleAccordion = (index) =>
+  {
     const newOpenState = [...isOpen];
     newOpenState[index] = !newOpenState[index];
     setIsOpen(newOpenState);
@@ -108,17 +110,18 @@ export default function FAQPage({ showFooter, showBanner }) {
           className=" flex flex-col      my-10  justify-center mx-auto"
         >
           <div className=" flex flex-col lg:gap-10 pb-20 lg:pb-0 text-center  mx-auto">
-            <span className="text-lg -mb-7 pt-4 font-semibold" id="span">
+            <span className="text-xl mb-7 pt-4 font-semibold" id="span">
               FAQs
             </span>
-            <h1 className="text-3xl lg:text-7xl font-headingFont mb-20">
+            <h1 className="text-5xl lg:text-7xl font-headingFont mb-20">
               We Are Here To Help You
             </h1>
           </div>
-          <div className="container">
+          {/* Body */}
+          <div className="  container">
             <div
               data-aos="fade-up"
-              className="questions_div  grid grid-cols-2 gap-x-4 gap-y-10 "
+              className="questions_div  grid grid-cols-1 lg:grid-cols-2 gap-x-4 gap-y-10 "
             >
               {questions.map((item, index) => (
                 <Question

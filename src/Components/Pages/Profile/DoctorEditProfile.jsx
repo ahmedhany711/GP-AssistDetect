@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Footer from "../../Footer/Footer";
 import img1 from "../../../photos/ui ux home/ahmed.jpg";
 
-const DoctorEditProfile = ({ onLogin }) => {
+const DoctorEditProfile = () => {
   const currentPassword = "123456789";
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -72,7 +72,7 @@ const DoctorEditProfile = ({ onLogin }) => {
         <div className="max-w-3xl w-full space-y-8">
           {/* Heading (Image) */}
           <div className="flex justify-between items-start mt-20">
-            <h2 className="mt-4  text-left font-headingFont text-5xl font-extrabold text-paragraph">
+            <h2 className="mt-4  text-left font-headingFont text-5xl font-extrabold text-nav">
               Edit Doctor Profile
             </h2>
             <div
@@ -96,8 +96,8 @@ const DoctorEditProfile = ({ onLogin }) => {
             {error && <p className="text-nav">{error}</p>}
 
             <div className="rounded-md  space-y-4">
-              {/* First Row */}
-              <div className="flex justify-between items-center">
+          
+              
                 {/* Full Name */}
                 <div>
                   <label
@@ -136,7 +136,7 @@ const DoctorEditProfile = ({ onLogin }) => {
                     className="appearance-none rounded-none relative block w-[250px] px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-primary-500 focus:border-primary-500 focus:z-10 sm:text-sm"
                   />
                 </div>
-              </div>
+             
 
               <div>
                 <label

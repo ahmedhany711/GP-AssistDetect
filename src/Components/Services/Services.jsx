@@ -1,30 +1,32 @@
 import React from "react";
-import {
-  FaArrowRight,
-  FaBrain,
-  FaHandshakeSimple,
-  FaLightbulb,
-} from "react-icons/fa6";
+import
+  {
+    FaArrowRight,
+    FaBrain,
+    FaHandshakeSimple,
+    FaLightbulb,
+  } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 
-const Services = () => {
+const Services = () =>
+{
   return (
     <div>
       <section id="" className="col-12 mt-5 mb-5 py-6">
         <div data-aos="fade-up" className="  text-center">
           <span className="col-12 mb-2">OUR SERVICES</span>
-          <h1 className="col-12 font-headingFont text-6xl mt-2">
+          <h1 className="col-12 font-headingFont text-4xl lg:text-6xl mt-2">
             Your Mental Health Is Our Priority
           </h1>
         </div>
 
         {/* Cards */}
         <div className="container px-0">
-          <div className="grid  grid-cols-2 sm:grid-cols-3 md:grid-cols-3   overflow-hidden gap-20 sm:gap-8 place-items-center items-center z-100  mt-5  ">
+          <div className="grid  grid-cols-1  md:grid-cols-2 lg:grid-cols-3  overflow-hidden gap-20 sm:gap-8 place-items-center items-center z-100  mt-5  ">
             {/* 1st card */}
             <div
               data-aos="zoom-in"
-              className="relative group   bg-white hover:bg-navbarColor hover:text-white  rounded-2xl shadow-xl py-4 px-8 h-[380px]  duration-200  my-4 hover:-translate-y-5 "
+              className="relative group   bg-white hover:bg-navbarColor hover:text-white  rounded-2xl shadow-xl py-4 px-8 h-[400px] md:[450px] duration-200  my-4 hover:-translate-y-5 "
             >
               {/* flex-col */}
               <div className="flex flex-col gap-1 justify-center items-center">
@@ -36,7 +38,7 @@ const Services = () => {
                 {/* details Section */}
                 {/* Title */}
                 <div className="  flex-col justify-center pt-2 text-center duration-300 transition-all">
-                  <h1 className="font-headingFont font-bold text-2xl">
+                  <h1 className="font-headingFont font-bold text-3xl">
                     Depression detection
                   </h1>
                 </div>
@@ -55,18 +57,18 @@ const Services = () => {
                   to="/"
                   className="text-nav flex gap-2 items-center no-underline m-0 p-0 justify-start"
                 >
-                  <p className="m-0 p-0 text-xl group-hover:text-white ">
+                  <p className="m-0 px-0 pb-12 text-xl group-hover:text-white ">
                     Read More
                   </p>
 
-                  <FaArrowRight className="text-xl hover:translate-x-2 group-hover:text-white" />
+                  <FaArrowRight className="text-xl hover:translate-x-2 mb-12 group-hover:text-white" />
                 </Link>
               </div>
             </div>
             {/* 2nd card */}
             <div
               data-aos="zoom-in"
-              className="relative group   bg-white hover:bg-navbarColor hover:text-white  rounded-2xl shadow-xl  pt-4 px-8 h-[380px]  duration-300  my-4 hover:-translate-y-5 "
+              className="relative group   bg-white hover:bg-navbarColor hover:text-white  rounded-2xl shadow-xl  pt-4 px-8 h-[400px] lg:[450px] duration-300  my-4 hover:-translate-y-5 "
             >
               {/* flex-col */}
               <div className="flex flex-col gap-1 justify-center items-center">
@@ -90,16 +92,16 @@ const Services = () => {
                 </div>
               </div>
               {/* Read More */}
-              <div className="flex justify-start items-center mt-3 p-0 group-hover:text-white">
+              <div className="flex justify-start items-center mt-3 lg:mt-6 p-0 group-hover:text-white ">
                 <Link
                   to="/"
-                  className="text-nav flex gap-2 items-center no-underline m-0 p-0 justify-start"
+                  className="text-nav flex gap-2 items-center no-underline m-0 px-0 pb-10 justify-start "
                 >
-                  <p className="m-0 p-0 text-xl group-hover:text-white ">
+                  <p className="m-0 px-0 pb-12 text-xl group-hover:text-white ">
                     Read More
                   </p>
 
-                  <FaArrowRight className="text-xl hover:translate-x-2 group-hover:text-white" />
+                  <FaArrowRight className="text-xl hover:translate-x-2 mb-12 group-hover:text-white" />
                 </Link>
               </div>
             </div>
@@ -107,7 +109,7 @@ const Services = () => {
             {/* 3rd card */}
             <div
               data-aos="zoom-in"
-              className="relative group bg-white hover:bg-navbarColor hover:text-white  rounded-2xl shadow-xl  py-4 px-8 h-[380px] duration-300  my-4 hover:-translate-y-5 "
+              className="relative group bg-white hover:bg-navbarColor hover:text-white  rounded-2xl shadow-xl  py-4 px-8 h-[400px] lg:[450px]  duration-300  my-4 hover:-translate-y-5 "
             >
               {/* flex-col */}
               <div className="flex flex-col gap-1 justify-center items-center">
@@ -118,12 +120,12 @@ const Services = () => {
 
                 {/* details Section */}
                 <div className="  flex-col justify-center pt-2 text-center duration-300 transition-all">
-                  <h1 className="font-headingFont font-bold text-2xl">
+                  <h1 className="font-headingFont font-bold text-3xl">
                     Meet with Doctor
                   </h1>
                 </div>
                 <div className="flex-col justify-center pt-2 text-center duration-300 transition-all">
-                  <p className="text-sm  text-gray-500 group-hover:text-white dark:text-white/60  duration-300 ">
+                  <p className="text-md  text-gray-500 group-hover:text-white dark:text-white/60  duration-300 ">
                     Find depression support on our webpage: informative content,
                     community connection, and confidential Zoom meetings with
                     professionals.
@@ -137,11 +139,11 @@ const Services = () => {
                   to="/"
                   className="text-nav flex gap-2 items-center no-underline m-0 p-0 justify-start"
                 >
-                  <p className="m-0 p-0 text-xl group-hover:text-white ">
+                  <p className="m-0 px-0 pb-12  text-xl group-hover:text-white ">
                     Read More
                   </p>
 
-                  <FaArrowRight className="text-xl hover:translate-x-2 group-hover:text-white" />
+                  <FaArrowRight className="text-xl hover:translate-x-2   mb-12  group-hover:text-white" />
                 </Link>
               </div>
             </div>

@@ -77,7 +77,7 @@ const EditProfilePage = ({ onLogin }) =>
         <div className="max-w-3xl w-full space-y-8">
           {/* Heading (Image) */}
           <div className="flex justify-between items-start mt-20">
-            <h2 className="mt-4  text-left font-headingFont text-5xl font-extrabold text-paragraph">
+            <h2 className="mt-4  text-left font-headingFont text-5xl font-extrabold text-nav">
               Edit Profile
             </h2>
             <div
@@ -89,7 +89,7 @@ const EditProfilePage = ({ onLogin }) =>
           </div>
 
           {/* Body  */}
-          <form className="mt-8 space-y-6 " onSubmit={handleSubmit}>
+          <form className="mt-8 space-y-6 max-w-3xl " onSubmit={handleSubmit}>
             <input
               type="file"
               id="imageInput"
@@ -101,7 +101,7 @@ const EditProfilePage = ({ onLogin }) =>
 
             <div className="rounded-md  space-y-4">
               {/* First Row */}
-              <div className="flex justify-between items-center">
+          
                 {/* Full Name */}
                 <div>
                   <label
@@ -140,7 +140,7 @@ const EditProfilePage = ({ onLogin }) =>
                     className="appearance-none rounded-none relative block w-[250px] px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-primary-500 focus:border-primary-500 focus:z-10 sm:text-sm"
                   />
                 </div>
-              </div>
+             
               {/* Email */}
               <div>
                 <label
@@ -270,13 +270,14 @@ const EditProfilePage = ({ onLogin }) =>
               <Link
                 to={"/profile"}
                 type="reset"
-                className="group relative w-full flex justify-center  no-underline py-2 px-4 border border-transparent text-xl font-medium rounded-md text-nav ring-nav outline-none ring-2 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-nav hover:bg-nav hover:text-white"
+                className=
+                "group relative w-full flex justify-center py-2 px-4 border-1 border-nav text-xl font-medium rounded-md text-white bg-nav hover:bg-white hover:text-nav  ring-2 ring-nav focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-nav no-underline"
               >
                 Cancel
               </Link>
               <button
                 type="submit"
-                className="group relative w-full flex justify-center py-2 px-4 border-1 border-nav text-xl font-medium rounded-md text-white bg-nav hover:bg-white hover:text-nav  ring-2 ring-nav focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-nav"
+                className="group relative w-full flex justify-center  no-underline py-2 px-4 border border-transparent text-xl font-medium rounded-md text-nav ring-nav outline-none ring-2 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-nav hover:bg-nav hover:text-white"
               >
                 Save
               </button>
