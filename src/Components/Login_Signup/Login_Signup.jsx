@@ -72,48 +72,46 @@ const SignUpAndLoginPage = () =>
   {
     e.preventDefault();
     handleError();
-    // try {
-    //   const response = await fetch(
-    //     "https://gp-production-ead6.up.railway.app/api/patient/signin",
-    //     {
-    //       method: "POST",
-    //       headers: {
-    //         "Content-Type": "application/json",
-    //       },
-    //       body: JSON.stringify({
-    //         email,
-    //         password,
-    //       }),
-    //     }
-    //   );
+    try {
+      const response = await fetch(
+        "https://b7a2-102-40-210-151.ngrok-free.app/api/patient/sign-in",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email,
+            password,
+          }),
+        }
+      );
 
-    //   console.log("Response Headers:", response.headers);
+      console.log("Response Headers:", response.headers);
 
-    //   if (response.ok) {
-    //     const data = await response.json();
-    //     console.log("Login successful:", data);
-    //     localStorage.setItem("token", data.data.token);
-    //     setIsLoggedIn(true);
-    //     localStorage.setItem("isLogin", isLoggedIn);
+      if (response.ok) {
+        const data = await response.json();
+        console.log("Login successful:", data);
+        localStorage.setItem("token", data.data.token);
+        setIsLoggedIn(true);
+        localStorage.setItem("isLogin?", isLoggedIn);
 
-    //     setTimeout(() => {
-    //       // Perform page navigation here
-    //       window.location.href = "/patient";
-    //     }, 1000);
+        setTimeout(() => {
+          // Perform page navigation here
+          window.location.href = "/patient";
+        }, 1000);
 
-    //     if (onLogin) {
-    //       onLogin(email, password);
-    //     }
-    //   } else {
-    //     console.error("Login failed:", response.status);
-    //     // Handle login failure here
-    //   }
-    // } catch (error) {
-    //   console.error("Error:", error);
+    
+      } else {
+        console.error("Login failed:", response.status);
+        // Handle login failure here
+      }
+    } catch (error) {
+      console.error("Error:", error);
 
-    // }
-    setIsLoggedIn(true);
-    window.location.href = "/patient";
+    }
+    // setIsLoggedIn(true);
+    // window.location.href = "/patient";
   };
   const handleSignUp = async (e) =>
   {
@@ -122,46 +120,43 @@ const SignUpAndLoginPage = () =>
     setIsLoggedIn(true);
     localStorage.setItem("isLogin?", isLoggedIn);
 
-    window.location.href = "/patient";
-    // try {
-    //   const response = await fetch(
-    //     "https://gp-production-ead6.up.railway.app/api/patient/signup",
-    //     {
-    //       method: "POST",
-    //       headers: {
-    //         "Content-Type": "application/json",
-    //         Accept: "application/json",
-    //       },
-    //       body: JSON.stringify({
-    //         name: fullName,
-    //         email: email,
-    //         password: password,
-    //         password_confirmation: confirmPassword,
-    //         birth: birth,
-    //       }),
-    //     }
-    //   );
-    //   console.log("Response Headers:", response.headers);
-    //   const data = await response.json();
-    //   if (response.ok) {
-    //     console.log("Sign-up successful:", data);
-    //     localStorage.setItem("token", data.data.token);
-    //     setIsLoggedIn(true);
-    //     localStorage.setItem("isLogin", isLoggedIn);
+    // window.location.href = "/patient";
+    try {
+      const response = await fetch(
+        "https://b7a2-102-40-210-151.ngrok-free.app/api/patient/sign-up",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            name: fullName,
+            email: email,
+            password: password,
+            password_confirmation: confirmPassword,
+            birth: birth,
+          }),
+        }
+      );
+      console.log("Response Headers:", response.headers);
+      const data = await response.json();
+      if (response.ok) {
+        console.log("Sign-up successful:", data);
+        localStorage.setItem("token", data.data.token);
+        setIsLoggedIn(true);
+        localStorage.setItem("isLogin", isLoggedIn);
 
-    //     window.location.href = "/patient";
-    //     // Invoke the onLogin callback if provided
-    //     if (onLogin) {
-    //       onLogin(email, password);
-    //     }
-    //   } else {
-    //     console.error("Sign-up failed:", data.message);
-    //     // Handle sign-up failure here
-    //   }
-    // } catch (error) {
-    //   console.error("Error:", error);
+        window.location.href = "/patient";
+   
+      } else {
+        console.error("Sign-up failed:", data.message);
+        // Handle sign-up failure here
+      }
+    } catch (error) {
+      console.error("Error:", error);
 
-    // }
+    }
   };
   return (
     <>

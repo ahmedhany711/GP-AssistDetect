@@ -1,79 +1,132 @@
-import React from "react";
-import img1 from "../../../photos/ui ux home/ahmed.jpg";
+import React, { useEffect, useState } from "react";
 // import image10 from "../../../assets/images/10.jpg";
 // import image11 from "../../../assets/images/11.jpg";
 import Footer from "../../Footer/Footer";
-import image3 from "../../../assets/images/3.jpg";
-import image4 from "../../../assets/images/4.jpg";
-import image5 from "../../../assets/images/5.jpg";
+// import img1 from "../../../photos/ui ux home/ahmed.jpg";
+// import image3 from "../../../assets/images/3.jpg";
+// import image4 from "../../../assets/images/4.jpg";
+// import image5 from "../../../assets/images/5.jpg";
 // import DoctorsCard from "../../Cards/DoctorsCard";
 import MemberCard from "../../MemberCard/MemberCard";
 
-const doctorsData = [
-    {
-        id: 1,
-        img: image3,
-        name: "Heba Ahmed",
-        availableDays: "Sunday , Monday",
-        availableTimeFrom: "6 pm",
-        availableTimeTo: "10 pm",
-        date: "10-5-2021",
-        content: "Hello, it's a very good website.",
-        email: "heba123@gmail.com",
-        doctor: true,
-    },
-    {
-        id: 2,
-        img: img1,
-        name: "Ahmed Hany",
-        availableDays: "Sunday , Monday",
-        availableTimeFrom: "6 pm",
-        availableTimeTo: "10 pm",
-        date: "11-7-2023",
-        content: "Hello, it's a very good website.",
-        email: "ahmed20011107@gmail.com",
-        doctor: true,
-    },
-    {
-        id: 3,
-        img: image4,
-        name: "Mohamed Amgad",
-        availableDays: "Sunday , Monday",
-        availableTimeFrom: "6 pm",
-        availableTimeTo: "10 pm",
-        date: "10-5-2021",
-        content: "Hello, it's a very good website.",
-        email: "m.amgad611@gmail.com",
-        doctor: true,
-    },
-    {
-        id: 4,
-        img: image5,
-        name: "Marwa Abdin",
-        availableDays: "Sunday , Monday",
-        availableTimeFrom: "6 pm",
-        availableTimeTo: "10 pm",
-        date: "11-7-2023",
-        content: "Hello, it's a very good website.",
-        email: "marwa_abdin123@gmail.com",
-        doctor: true,
-    },
-    {
-        id: 5,
-        img: image4,
-        name: "Abdelrahamn saad",
-        availableDays: "Sunday , Monday",
-        availableTimeFrom: "6 pm",
-        availableTimeTo: "10 pm",
-        date: "11-7-2023",
-        content: "Hello, it's a very good website.",
-        email: "abdo2007@gmail.com",
-        doctor: true,
-    }
-];
+// const doctorsData = [
+//     {
+//         id: 1,
+//         img: image3,
+//         name: "Heba Ahmed",
+//         availableDays: "Sunday , Monday",
+//         availableTimeFrom: "6 pm",
+//         availableTimeTo: "10 pm",
+//         date: "10-5-2021",
+//         content: "Hello, it's a very good website.",
+//         email: "heba123@gmail.com",
+//         doctor: true,
+//     },
+//     {
+//         id: 2,
+//         img: img1,
+//         name: "Ahmed Hany",
+//         availableDays: "Sunday , Monday",
+//         availableTimeFrom: "6 pm",
+//         availableTimeTo: "10 pm",
+//         date: "11-7-2023",
+//         content: "Hello, it's a very good website.",
+//         email: "ahmed20011107@gmail.com",
+//         doctor: true,
+//     },
+//     {
+//         id: 3,
+//         img: image4,
+//         name: "Mohamed Amgad",
+//         availableDays: "Sunday , Monday",
+//         availableTimeFrom: "6 pm",
+//         availableTimeTo: "10 pm",
+//         date: "10-5-2021",
+//         content: "Hello, it's a very good website.",
+//         email: "m.amgad611@gmail.com",
+//         doctor: true,
+//     },
+//     {
+//         id: 4,
+//         img: image5,
+//         name: "Marwa Abdin",
+//         availableDays: "Sunday , Monday",
+//         availableTimeFrom: "6 pm",
+//         availableTimeTo: "10 pm",
+//         date: "11-7-2023",
+//         content: "Hello, it's a very good website.",
+//         email: "marwa_abdin123@gmail.com",
+//         doctor: true,
+//     },
+//     {
+//         id: 5,
+//         img: image4,
+//         name: "Abdelrahamn saad",
+//         availableDays: "Sunday , Monday",
+//         availableTimeFrom: "6 pm",
+//         availableTimeTo: "10 pm",
+//         date: "11-7-2023",
+//         content: "Hello, it's a very good website.",
+//         email: "abdo2007@gmail.com",
+//         doctor: true,
+//     }
+// ];
 
 export default function Doctors({showNav})
 {
+    const [doctorsData, setDoctorsdata] = useState([]);
+
+    useEffect(() =>
+    {
+        const fetchDoctorsData = async () =>
+        {
+            const token = localStorage.getItem("token");
+            try {
+                const response = await fetch(
+                    "https://b7a2-102-40-210-151.ngrok-free.app/api/patient/show-doctors-profile",
+                    {
+                        method: "GET",
+                        headers: {
+                            "Content-Type": "application/json",
+                            accept: "application/json",
+                            Authorization: `Bearer ${token}`,
+                        },
+                    }
+                );
+                console.log("fetch Doctors data:", response);
+
+                if (response.ok) {
+                    const data = await response.json();
+                    console.log("Successful fetch Doctors data:", data);
+
+                    const docData = [
+
+                        {
+                            id: data.data.id,
+                            img: data.data.profile_image,
+                            name: data.data.name,
+                            availableDays: data.data.availabilities.day,
+                            availableTimeFrom: data.data.availabilities.from,
+                            availableTimeTo: data.data.availabilities.to,
+                            // date: data.data.availabilities.day,
+                            email: data.data.email,
+                        },]
+
+                    // Update state with fetched user profile data
+                    setDoctorsdata(...docData, docData);
+
+                } else {
+                    console.error("Failed to fetch Doctors:", response.status);
+                    // Handle error here
+                }
+            } catch (error) {
+                console.error("Error:", error);
+                // Handle error here
+            }
+        };
+
+        fetchDoctorsData();
+    }, []);
     return (
         <div className="bg-light">
             <div className="container min-h-screen   mt-10 py-20 ">

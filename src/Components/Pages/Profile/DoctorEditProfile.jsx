@@ -1,46 +1,42 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Footer from "../../Footer/Footer";
 import img1 from "../../../photos/ui ux home/ahmed.jpg";
 
-const DoctorEditProfile = () => {
-  const currentPassword = "123456789";
-  const [email, setEmail] = useState("");
+const DoctorEditProfile = () =>
+{
+  // const currentPassword = "123456789";
+  // const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
+  const [newPassword, setNewPassword] = useState("");
+  const [newConfirmPassword, setnewConfirmPassword] = useState("");
   const [fullName, setFullName] = useState("");
   const [birth, setBirth] = useState("");
   const [image, setImage] = useState(img1);
   const [changePassword, setChangePassword] = useState(false);
-
-  const [bio] = useState("");
-
   // const [bio, setBio] = useState("");
 
   const [error, setError] = useState("");
-
-  const handleSubmit = (e) => {
+  const handleSubmit = (e) =>
+  {
     e.preventDefault();
 
     // Perform form validation
     if (
-      !email ||
-      !password ||
-      !confirmPassword ||
       !fullName ||
-      !birth ||
-      !bio
-    ) {
+      !birth) {
       setError("All fields are required.");
-      setTimeout(() => {
+      setTimeout(() =>
+      {
         setError("");
       }, 2000);
       return;
     }
 
-    if (password !== confirmPassword) {
+    if (password !== newConfirmPassword) {
       setError("Passwords do not match.");
-      setTimeout(() => {
+      setTimeout(() =>
+      {
         setError("");
       }, 2000);
       return;
@@ -56,16 +52,127 @@ const DoctorEditProfile = () => {
     //   bio,
     // };
   };
-  const handleImageChange = (e) => {
+  const handleImageChange = (e) =>
+  {
     const file = e.target.files[0];
     if (file) {
       const reader = new FileReader();
-      reader.onload = (event) => {
+      reader.onload = (event) =>
+      {
         setImage(event.target.result);
       };
       reader.readAsDataURL(file);
     }
   };
+
+
+  useEffect(() =>
+  {
+    const fetchUserProfile = async () =>
+    {
+      const token = localStorage.getItem("token");
+      try {
+        const response = await fetch(
+          "https://b7a2-102-40-210-151.ngrok-free.app/api/doctor/update-profile",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              accept: "application/json",
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
+        console.log("User profile data:", response);
+
+        if (response.ok) {
+          const data = await response.json();
+          console.log("User profile data:", data);
+
+          // Update state with fetched user profile data
+          // data.data.email = email;
+          data.data.name = fullName;
+          data.data.birth = birth;
+          data.data.profile_image = image;
+          // setEmail(data.data.email);
+          // setFullName(data.data.name);
+          // setBirth(data.data.birth);
+          // setImage(data.data.profile_image); 
+        } else {
+          console.error("Failed to fetch user profile:", response.status);
+          // Handle error here
+        }
+      } catch (error) {
+        console.error("Error:", error);
+        // Handle error here
+      }
+    };
+
+    fetchUserProfile();
+  }, [fullName, birth, image]);
+
+
+
+
+  useEffect(() =>
+  {
+    const changePassword = async () =>
+    {
+      const token = localStorage.getItem("token");
+      try {
+        const response = await fetch(
+          "https://b7a2-102-40-210-151.ngrok-free.app/api/doctor/change-password",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              accept: "application/json",
+              Authorization: `Bearer ${token}`,
+            },
+            body: JSON.stringify({
+              "current_password": password,
+              "new_password": newPassword,
+              "new_password_confirmation": newConfirmPassword,
+            }),
+          }
+        );
+        console.log("Change Password data:", response);
+
+        if (response.ok) {
+          const data = await response.json();
+          console.log("Change Password data:", data);
+
+          // Update state with fetched user profile data
+          // data.data.email = email;
+          // data.data.current_password = password;
+          // data.data.new_password = newPassword;
+          // data.data.new_password_confirmation = newConfirmPassword;
+          // setEmail(data.data.email);
+          // setFullName(data.data.name);
+          // setBirth(data.data.birth);
+          // setImage(data.data.profile_image); 
+        } else {
+          const errorData = await response.json();
+          console.error("Failed to change password:", response.status, errorData);
+          // Handle error here, for example:
+          alert(`Error ${response.status}: ${errorData.message || 'Unknown error'}`);
+        }
+      } catch (error) {
+        console.error("Error:", error);
+        // Handle error here
+        alert(`Error: ${error.message}`);
+      }
+    };
+    changePassword();
+  }, [password, newPassword, newConfirmPassword])
+
+
+
+
+
+
+
+
   return (
     <>
       <div className="min-h-screen flex items-center justify-center pt-5 px-4 sm:px-6 lg:px-8 mb-20">
@@ -96,49 +203,49 @@ const DoctorEditProfile = () => {
             {error && <p className="text-nav">{error}</p>}
 
             <div className="rounded-md  space-y-4">
-          
-              
-                {/* Full Name */}
-                <div>
-                  <label
-                    htmlFor="fullName"
-                    className="text-nav mb-2 text-2xl font-headingFont"
-                  >
-                    Full Name
-                  </label>
-                  <input
-                    id="fullName"
-                    name="fullName"
-                    type="text"
-                    autoComplete="name"
-                    required
-                    value={fullName}
-                    onChange={(e) => setFullName(e.target.value)}
-                    className="appearance-none rounded-none relative block w-[450px] px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-primary-500 focus:border-primary-500 focus:z-10 sm:text-sm"
-                    placeholder="Full Name"
-                  />
-                </div>
-                {/* Birth */}
-                <div>
-                  <label
-                    htmlFor="birth"
-                    className="text-nav  mb-2 text-2xl  font-headingFont"
-                  >
-                    Date of Birth
-                  </label>
-                  <input
-                    id="birth"
-                    name="birth"
-                    type="date"
-                    required
-                    value={birth}
-                    onChange={(e) => setBirth(e.target.value)}
-                    className="appearance-none rounded-none relative block w-[250px] px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-primary-500 focus:border-primary-500 focus:z-10 sm:text-sm"
-                  />
-                </div>
-             
 
+
+              {/* Full Name */}
               <div>
+                <label
+                  htmlFor="fullName"
+                  className="text-nav mb-2 text-2xl font-headingFont"
+                >
+                  Full Name
+                </label>
+                <input
+                  id="fullName"
+                  name="fullName"
+                  type="text"
+                  autoComplete="name"
+                  required
+                  value={fullName}
+                  onChange={(e) => setFullName(e.target.value)}
+                  className="appearance-none rounded-none relative block w-[450px] px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-primary-500 focus:border-primary-500 focus:z-10 sm:text-sm"
+                  placeholder="Full Name"
+                />
+              </div>
+              {/* Birth */}
+              <div>
+                <label
+                  htmlFor="birth"
+                  className="text-nav  mb-2 text-2xl  font-headingFont"
+                >
+                  Date of Birth
+                </label>
+                <input
+                  id="birth"
+                  name="birth"
+                  type="date"
+                  required
+                  value={birth}
+                  onChange={(e) => setBirth(e.target.value)}
+                  className="appearance-none rounded-none relative block w-[250px] px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-primary-500 focus:border-primary-500 focus:z-10 sm:text-sm"
+                />
+              </div>
+
+              {/* Email */}
+              {/* <div>
                 <label
                   htmlFor="email"
                   className="text-nav  mb-2 text-2xl   font-headingFont"
@@ -156,7 +263,7 @@ const DoctorEditProfile = () => {
                   className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-primary-500 focus:border-primary-500 focus:z-10 sm:text-sm"
                   placeholder="Email address"
                 />
-              </div>
+              </div> */}
               {/* Change Password or Not ? */}
               <div className="flex justify-end">
                 <button
@@ -185,26 +292,26 @@ const DoctorEditProfile = () => {
                       <input
                         id="CurrentPassword"
                         name="CurrentPassword"
-                        type="text"
+                        type="password"
                         autoComplete="password"
                         required
-                        value={currentPassword}
-                        readOnly
-                        // onChange={(e) => setPassword(e.target.value)}
+                        value={password}
+
+                        onChange={(e) => setPassword(e.target.value)}
                         className="w-[350px] appearance-none rounded-none relative block  px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-primary-500 focus:border-primary-500 focus:z-10 sm:text-sm"
-                        placeholder="Email address"
+                        placeholder="Enter Current Paswword"
                       />
                     </div>
                   </div>
 
-                  {/* Passwords Row */}
+                  {/* New Passwords Row */}
                   <div className="flex justify-between ">
                     <div>
                       <label
                         htmlFor="password"
                         className="text-nav  mb-2 text-2xl font-headingFont"
                       >
-                        Password
+                        New Password
                       </label>
                       <input
                         id="password"
@@ -212,30 +319,30 @@ const DoctorEditProfile = () => {
                         type="password"
                         autoComplete="password"
                         required
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
+                        value={newPassword}
+                        onChange={(e) => setNewPassword(e.target.value)}
                         className="w-[350px] appearance-none rounded-none relative block  px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-primary-500 focus:border-primary-500 focus:z-10 sm:text-sm"
-                        placeholder="Email address"
+                        placeholder="Enter New Paswword"
                       />
                     </div>
                     {/* Confirm Password */}
                     <div>
                       <label
-                        htmlFor="confirmPassword"
+                        htmlFor="newConfirmPassword"
                         className="text-nav  mb-2 text-2xl font-headingFont"
                       >
-                        Confirm Password
+                        New Password Confirmation
                       </label>
                       <input
-                        id="confirmPassword"
-                        name="confirmPassword"
-                        type=" password"
+                        id="newConfirmPassword"
+                        name="newConfirmPassword"
+                        type="password"
                         autoComplete=" password"
                         required
-                        value={confirmPassword}
-                        onChange={(e) => setConfirmPassword(e.target.value)}
+                        value={newConfirmPassword}
+                        onChange={(e) => setnewConfirmPassword(e.target.value)}
                         className="w-[350px] appearance-none rounded-none relative block px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-primary-500 focus:border-primary-500 focus:z-10 sm:text-sm"
-                        placeholder="Email address"
+                        placeholder="Confirm New Paswword "
                       />
                     </div>
                   </div>

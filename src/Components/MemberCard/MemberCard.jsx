@@ -1,10 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./MemberCard.scss";
-// get our fontawesome imports
-
 import { FaInstagram, FaLinkedin } from "react-icons/fa6";
 import { FaTwitter } from "react-icons/fa6";
-
 import { FaFacebookF } from "react-icons/fa";
 
 export default function MemberCard(props)
@@ -24,11 +21,58 @@ export default function MemberCard(props)
     setMeetingTopic("");
   };
 
+  useEffect(() =>
+  {
+    const RequestMeeting = async () =>
+    {
+      const token = localStorage.getItem("token");
+      try {
+        const response = await fetch(
+          "https://b7a2-102-40-210-151.ngrok-free.app/api/patient/request-meeting",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              accept: "application/json",
+              Authorization: `Bearer ${token}`,
+            },
+            body: JSON.stringify({
+              "doctor_id": props.id,
+              "topic": meetingTopic,
+
+            }),
+          }
+        );
+        console.log("Request Meeting data:", response);
+
+        if (response.ok) {
+          const data = await response.json();
+          console.log("Request Meeting data:", data);
+
+          // setShowModal(false);
+        } else {
+          const errorData = await response.json();
+          console.error("Failed to Request Meeting:", response.status, errorData);
+          // Handle error here, for example:
+          alert(`Error ${response.status}: ${errorData.message || 'Unknown error'}`);
+        }
+      } catch (error) {
+        console.error("Error:", error);
+        // Handle error here
+        alert(`Error: ${error.message}`);
+      }
+    };
+    RequestMeeting();
+  }, [meetingTopic])
+
   const handleConfirm = () =>
   {
     console.log("Meeting Topic:", meetingTopic, "With Doctor ID:", props.id);
     handleCloseModal();
   };
+
+
+
   return (
     <>
       <div className=" ">

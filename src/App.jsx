@@ -61,14 +61,6 @@ function App()
           element={<FAQPage showFooter={true} showBanner={true} />}
         />
         <Route path="patient" element={<Patient />} />{" "}
-        <Route path="blog" element={<PostsPage showNav={true} />} />
-        <Route path="doctors" element={<Doctors showNav={true} />} />
-        <Route path="doctorsHome" element={<DoctorsHome />} />
-        <Route path="doctorProfile" element={<DoctorProfile />} />{" "}
-        <Route path="editprofile" element={<EditProfilePage />} />
-        <Route path="editDoctorProfile" element={<DoctorEditProfile />} />
-        <Route path="profile" element={<Profile />} />
-        <Route path="NotificationPage" element={<NotificationPage />} />{" "}
         <Route path="contact" element={<ContactUs />} />{" "}
         <Route path="managePosts" element={<ManagePosts />} />
         <Route path="ManageUsers" element={<ManageUsers />} />
@@ -77,6 +69,14 @@ function App()
 
         
      
+        <Route path="editprofile" element={<EditProfilePage />} />
+        <Route path="doctors" element={<Doctors showNav={true} />} />
+        <Route path="doctorsHome" element={<DoctorsHome />} />
+        <Route path="doctorProfile" element={<DoctorProfile />} />{" "}
+        <Route path="editDoctorProfile" element={<DoctorEditProfile />} />
+        <Route path="profile" element={<Profile />} />
+        <Route path="NotificationPage" element={<NotificationPage />} />{" "}
+        <Route path="blog" element={<PostsPage showNav={true} />} />
 
         
 

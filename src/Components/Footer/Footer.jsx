@@ -15,7 +15,7 @@ const Footer = () =>
       className="bg-nav pb-0  pt-28  pl-10  w-full min-h-[550px]"
     >
       <div className="container mx-auto max-w-[1450px] pl-12 pr-10">
-        <div className="grid  grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 text-white items-start gap-10">
+        <div className="grid  grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 text-white items-start gap-10">
           {/* 1st column logo + Social  */}
           <div
             data-aos="zoom-out"

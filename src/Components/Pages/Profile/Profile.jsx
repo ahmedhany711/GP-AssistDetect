@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Footer from "../../Footer/Footer";
 import { useEffect } from "react";
-import img1 from "../../../photos/ui ux home/ahmed.jpg";
+// import img1 from "../../../photos/ui ux home/ahmed.jpg";
 
 export default function Profile()
 {
   const [email, setEmail] = useState("");
-  // const [image, setImage] = useState("");
-  const [image, setImage] = useState(img1);
+  const [image, setImage] = useState("");
+  // const [image, setImage] = useState(img1);
   const [fullName, setFullName] = useState("");
   const [birth, setBirth] = useState("");
   const [error, setError] = useState("");
@@ -20,7 +20,7 @@ export default function Profile()
       const token = localStorage.getItem("token");
       try {
         const response = await fetch(
-          "https://gp-production-ead6.up.railway.app/api/patient/profile",
+          "https://b7a2-102-40-210-151.ngrok-free.app/api/patient/show-profile",
           {
             method: "GET",
             headers: {

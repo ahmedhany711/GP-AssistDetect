@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Footer from "../../Footer/Footer";
 import img1 from "../../../photos/ui ux home/ahmed.jpg";
@@ -12,11 +12,57 @@ const EditProfilePage = ({ onLogin }) =>
   const [image, setImage] = useState(img1);
   const [birth, setBirth] = useState("");
   const [changePassword, setChangePassword] = useState(false);
-  const [bio] = useState("");
 
   // const [bio, setBio] = useState("");
 
   const [error, setError] = useState("");
+
+
+
+  useEffect(() =>
+  {
+    const fetchUserProfile = async () =>
+    {
+      const token = localStorage.getItem("token");
+      try {
+        const response = await fetch(
+          "https://b7a2-102-40-210-151.ngrok-free.app/api/patient/update-profile",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              accept: "application/json",
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
+        console.log("User profile data:", response);
+
+        if (response.ok) {
+          const data = await response.json();
+          console.log("User profile data:", data);
+
+          // Update state with fetched user profile data
+          // data.data.email = email;
+          data.data.name = fullName;
+          data.data.birth = birth;
+          data.data.profile_image = image;
+          // setEmail(data.data.email);
+          // setFullName(data.data.name);
+          // setBirth(data.data.birth);
+          // setImage(data.data.profile_image); 
+        } else {
+          console.error("Failed to fetch user profile:", response.status);
+          // Handle error here
+        }
+      } catch (error) {
+        console.error("Error:", error);
+        // Handle error here
+      }
+    };
+
+    fetchUserProfile();
+  }, [fullName, birth, image]);
 
   const handleSubmit = (e) =>
   {
@@ -24,13 +70,8 @@ const EditProfilePage = ({ onLogin }) =>
 
     // Perform form validation
     if (
-      !email ||
-      !password ||
-      !confirmPassword ||
       !fullName ||
-      !birth ||
-      !bio
-    ) {
+      !birth) {
       setError("All fields are required.");
       setTimeout(() =>
       {
@@ -101,48 +142,48 @@ const EditProfilePage = ({ onLogin }) =>
 
             <div className="rounded-md  space-y-4">
               {/* First Row */}
-          
-                {/* Full Name */}
-                <div>
-                  <label
-                    htmlFor="fullName"
-                    className="text-nav mb-2 text-2xl font-headingFont"
-                  >
-                    Full Name
-                  </label>
-                  <input
-                    id="fullName"
-                    name="fullName"
-                    type="text"
-                    autoComplete="name"
-                    required
-                    value={fullName}
-                    onChange={(e) => setFullName(e.target.value)}
-                    className="appearance-none rounded-none relative block w-[450px] px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-primary-500 focus:border-primary-500 focus:z-10 sm:text-sm"
-                    placeholder="Full Name"
-                  />
-                </div>
-                {/* Birth */}
-                <div>
-                  <label
-                    htmlFor="birth"
-                    className="text-nav  mb-2 text-2xl  font-headingFont"
-                  >
-                    Date of Birth
-                  </label>
-                  <input
-                    id="birth"
-                    name="birth"
-                    type="date"
-                    required
-                    value={birth}
-                    onChange={(e) => setBirth(e.target.value)}
-                    className="appearance-none rounded-none relative block w-[250px] px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-primary-500 focus:border-primary-500 focus:z-10 sm:text-sm"
-                  />
-                </div>
-             
-              {/* Email */}
+
+              {/* Full Name */}
               <div>
+                <label
+                  htmlFor="fullName"
+                  className="text-nav mb-2 text-2xl font-headingFont"
+                >
+                  Full Name
+                </label>
+                <input
+                  id="fullName"
+                  name="fullName"
+                  type="text"
+                  autoComplete="name"
+                  required
+                  value={fullName}
+                  onChange={(e) => setFullName(e.target.value)}
+                  className="appearance-none rounded-none relative block w-[450px] px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-primary-500 focus:border-primary-500 focus:z-10 sm:text-sm"
+                  placeholder="Full Name"
+                />
+              </div>
+              {/* Birth */}
+              <div>
+                <label
+                  htmlFor="birth"
+                  className="text-nav  mb-2 text-2xl  font-headingFont"
+                >
+                  Date of Birth
+                </label>
+                <input
+                  id="birth"
+                  name="birth"
+                  type="date"
+                  required
+                  value={birth}
+                  onChange={(e) => setBirth(e.target.value)}
+                  className="appearance-none rounded-none relative block w-[250px] px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-primary-500 focus:border-primary-500 focus:z-10 sm:text-sm"
+                />
+              </div>
+
+              {/* Email */}
+              {/* <div>
                 <label
                   htmlFor="email"
                   className="text-nav  mb-2 text-2xl   font-headingFont"
@@ -160,7 +201,7 @@ const EditProfilePage = ({ onLogin }) =>
                   className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-primary-500 focus:border-primary-500 focus:z-10 sm:text-sm"
                   placeholder="Email address"
                 />
-              </div>
+              </div> */}
               {/* Change Password or Not ? */}
               <div className="flex justify-end">
                 <button
@@ -170,10 +211,10 @@ const EditProfilePage = ({ onLogin }) =>
                   }}
                   className=" text-nav px-4 py-2 rounded-md no-underline text-sm   hover:scale-x-110"
                 >
-                  {changePassword ? "Canel Change Password" :"Change Password ?"} 
+                  {changePassword ? "Canel Change Password" : "Change Password ?"}
                 </button>
               </div>
-            
+
               {/* if click on change password */}
               {changePassword && (
                 <>
